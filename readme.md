@@ -1,343 +1,116 @@
-# Finalty Django Project
+# Xtracut Log Management System
 
-This README provides essential information about the Finalty Django project, including details on Python version, installation, and running the project. Additionally, it outlines the project structure and lists the required dependencies.
+## Overview
 
-## Project Details
+The **Xtracut Log Management System** is a comprehensive dashboard built using the Django framework to monitor various plugins utilized by users. It provides real-time insights into plugin usage, allowing users to filter data by time periods such as 1 day, 1 week, 1 month, or custom date ranges. This system is designed to help administrators easily track the status of plugins, view detailed logs, and assess the performance or errors occurring across different users.
 
-### Python Version
+## Features
 
-This project is developed using Python 3.x. Ensure that you have Python 3.x installed on your system.
+- **Plugin Monitoring**: Track and monitor the usage of plugins by different users.
+- **Filters**: Filter data by specific time frames (1 day, 1 week, 1 month) or define a custom date range.
+- **User-specific Insights**: View plugin usage details and errors specific to individual users.
+- **Dashboard Overview**: Visual representation of plugin activity, including success and failure rates.
+- **Status Indicators**: Displays the current status of each plugin (active/inactive/errors).
+- **Real-Time Updates**: Automatically updates the status of plugins in real-time.
+- **Django-based Backend**: Built using the Django web framework with MongoDB for data storage.
 
-### How to Run
+## Installation
 
-1. **Clone the Repository:**
+Follow the steps below to set up the **Xtracut Log Management System** locally:
+
+### Prerequisites
+
+Ensure you have the following installed:
+
+- Python 3.x
+- MongoDB
+- pip (Python package manager)
+
+### Steps
+
+1. **Clone the repository**:
     
     ```bash
-    git clone https://github.com/finaltyfintech/Finalty.git
-    cd Finalty
+   git clone https://github.com/NagiPragalathan/Xtracut_Log_Management_System.git cd Xtracut_Log_Management_System
     ```
     
-2. **Install Dependencies:**
+3. **Create a virtual environment** (recommended):
     
     ```bash
-    pip install -r requirements.txt
-    ``` 
+     python -m venv venv source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
+    ```
     
-3. **Run Migrations:**
+4. **Install required dependencies**:
     
-    ```bash 
+    ```bash
+     pip install -r requirements.txt
+    ```
+    
+5. **Configure MongoDB**:
+    
+    - Ensure MongoDB is running locally or configure the connection in `settings.py`:
+        
+      ```python
+      DATABASES = {
+          'default': {
+          'ENGINE': 'djongo',
+          'NAME': 'your_database_name',
+          'HOST': 'localhost',
+          'PORT': 27017,
+      } }
+      ```  
+6. **Run migrations**:
+    
+    ```bash
     python manage.py migrate
-    ``` 
+    ```
     
-4. **Start the Development Server:**
+7. **Create a superuser** (for accessing the Django admin panel):
     
-    ```bash 
+    ```bash
+    python manage.py createsuperuser
+    ```
+    
+8. **Start the development server**:
+    
+    ```bash
     python manage.py runserver
-    ``` 
+    ```
     
-    The development server will run on `http://127.0.0.1:8000/` by default.
+9. **Access the system**: Open your web browser and navigate to:
     
 
-### Project Structure
-
-The project is organized into the following directories:
-
-- **base:** Contains Django app related to the base functionality of the project.
-    - `admin.py`: Django admin configurations.
-    - `apps.py`: App configuration.
-    - `models.py`: Database models.
-    - `sitemaps.py`: Django sitemaps.
-    - `tests.py`: App-specific tests.
-    - `views.py`: Views for the app.
-    - `migrations/`: Database migration files.
-    - `templatetags/`: Custom template tags.
-- **Finalty:** Django project settings and configurations.
-    - `asgi.py`: ASGI configuration.
-    - `settings.py`: Project settings.
-    - `urls.py`: Project-level URLs.
-    - `wsgi.py`: WSGI configuration.
-- **static:** Contains static files for the project.
-    - `images/`: Image assets used in the project.
-- **templates:** HTML templates used in the project.
-    - `backup/`: Backup templates.
-    - `index.html`: Main index template.
-    - `list_out.html`: List output template.
-    - `underdev.html`: Under development template.
-
-### Project Dependencies
-
-Ensure you have the following Python packages installed:
-
-- `djongo==1.3.6`
-- `djangorestframework`
-- `django==4.1.9`
-- `pymongo==3.12.3`
-- `django-cors-headers`
-- `dnspython`
-- `requests`
-- `djangorestframework-jwt`
-- `djangorestframework-simplejwt`
-- `django-meta`
-- `django-robots-txt`
-
-## Additional Files
-
-- `build_files.sh`: Shell script for building files.
-- `note.txt`: Additional notes related to the project.
-- `robots.txt`: Configuration for search engine spiders.
-- `vercel.json`: Configuration for Vercel deployment.
-
-## Views Overview
-
-1. **Home View (`Home` function)**
+    ```bash
+    http://localhost:8000
+    ```
     
-    - Renders the `index.html` template.
-    - URL: `/`
-2. **List Out View (`list_out` function)**
-    
-    - Retrieves all contact data from the `Contact_us` model.
-    - Renders the `list_out.html` template with the contact data.
-    - URL: `/list_out/`
-3. **Delete Contact View (`delete_contact` function)**
-    
-    - Handles deletion of contact records based on the provided `contact_id`.
-    - Expects a GET request with the `contact_id` parameter.
-    - Returns a JSON response indicating the success or failure of the deletion.
-    - URL: `/delete_contact/`
-4. **Under Development View (`underdev` function)**
-    
-    - Renders the `underdev.html` template.
-    - URL: `/underdev/`
-5. **Contact Form View (`contact_form` function)**
-    
-    - Handles form submissions for contact information.
-    - Expects a POST request with form data (first name, last name, email, and message).
-    - Creates a new `Contact_us` record in the database.
-    - Redirects to the home page after form submission.
-    - URL: `/contact_form/`
-6. **Robots.txt View (`robots_txt` function)**
-    
-    - Generates a `robots.txt` file for search engine optimization (SEO).
-    - Specifies rules for web crawlers, disallowing access to certain paths.
-    - URL: `/robots.txt/`
+## Technologies Used
 
-## How to Use Views
+- **Backend**: Django (Python Framework)
+- **Database**: MongoDB
+- **Frontend**: HTML, CSS, JavaScript
+- **Version Control**: Git
+  
+## Usage
 
-### Home View
+1. Log in to the dashboard using your admin credentials.
+2. Navigate to the plugin monitoring section to view plugin usage data.
+3. Apply filters (1 day, 1 week, 1 month, or custom date range) to analyze plugin activities over specific time periods.
+4. Drill down into user-specific data to investigate plugin performance or errors.
+5. Monitor the status of each plugin in real-time and address any issues as they arise.
 
-- Access the home page by navigating to `/`. The `index.html` template will be rendered.
+## License
 
-### List Out View
+This project is licensed under the MIT License. You are free to use, modify, and distribute this software as per the terms outlined in the license file.
 
-- View the list of contacts by navigating to `/list_out/`. The `list_out.html` template will display the contact data.
+## Contributors
 
-### Delete Contact View
+We would like to thank the following contributors for their hard work:
 
-- To delete a contact, send a GET request to `/delete_contact/` with the `contact_id` parameter. The response will indicate whether the deletion was successful.
+- [NagiPragalathan](https://github.com/NagiPragalathan)
+- [Tarunika](https://github.com/Tarunika-R)
+- [Praveena](https://github.com/Praveena-Krishnan)
 
-### Under Development View
+## Contribution
 
-- Access the under development page by navigating to `/underdev/`. The `underdev.html` template will be rendered.
-
-### Contact Form View
-
-- Submit contact information through the form at `/contact_form/`. The form accepts first name, last name, email, and message. After submission, you will be redirected to the home page.
-
-### Robots.txt View
-
-- Access the `robots.txt` file for SEO configurations by navigating to `/robots.txt/`.
-
-## Finalty Django Project - Contact\_us Model
-
-The `Contact_us` model defines the structure of the database table used to store contact information in the Finalty Django project. This model is responsible for representing individual contact records.
-
-## Model Fields
-
-1. **`name` (CharField):**
-    
-    - Type: CharField with a maximum length of 255 characters.
-    - Purpose: Stores the full name of the contact.
-2. **`mail_address` (EmailField):**
-    
-    - Type: EmailField.
-    - Purpose: Stores the email address of the contact.
-3. **`message` (TextField):**
-    
-    - Type: TextField.
-    - Purpose: Stores the message or additional information provided by the contact.
-4. **`updated_time` (DateTimeField):**
-    
-    - Type: DateTimeField with `auto_now` set to True.
-    - Purpose: Automatically updates the timestamp whenever the contact record is modified.
-
-## Methods
-
-1. **`__str__` method:**
-    - Purpose: Provides a human-readable representation of the model instance.
-    - Returns: The name of the contact as the string representation.
-
-## Database Configuration (MongoDB)
-
-The Finalty Django project uses MongoDB as the database backend, and the configuration is specified in the `settings.py` file.
-
-```python
-DATABASES = {
-    'default': {
-        'ENGINE': 'djongo',
-        'CLIENT': {
-            'host': "mongodb+srv://finaltyfintech:nagi@cluster0.vulge49.mongodb.net/?retryWrites=true&w=majority",
-            'name': 'finaltyfintech',
-            'authMechanism': "SCRAM-SHA-1",
-        }
-    }
-}
-```
-
-Explanation:
-
-- **`ENGINE`:** Specifies the Django database engine to use Djongo, which is a connector for using Django with MongoDB.
-- **`CLIENT`:** Contains MongoDB connection details.
-    - **`host`:** Specifies the MongoDB server's connection URI.
-    - **`name`:** Specifies the name of the MongoDB database.
-    - **`authMechanism`:** Specifies the authentication mechanism to use (in this case, SCRAM-SHA-1).
-
-## Additional Details
-
-- **MongoDB Connection URI:**
-    - The MongoDB connection URI in the `host` field includes the necessary credentials (username and password), cluster information, and other connection options.
-    - Note: It's recommended to keep sensitive information like database credentials secure and not hardcode them directly in the source code.
-
-# Deploying Finalty Django Project on Vercel
-
-This guide provides steps to deploy the Finalty Django project on Vercel, a cloud platform for frontend and serverless functions.
-
-## Prerequisites
-
-- [Vercel Account](https://vercel.com/signup)
-- [Vercel CLI](https://vercel.com/download)
-
-## Deployment Steps
-
-1. **Clone the Repository:**
-   ```bash
-   git clone https://github.com/your-username/your-django-project.git
-   cd your-django-project
-2. **Install Dependencies:**
-    
-    `pip install -r requirements.txt` 
-    
-3. **Configure Vercel:**
-    
-    - Install Vercel CLI: `npm install -g vercel`
-    - Run `vercel login` to log in to your Vercel account.
-4. **Create Vercel Configuration File:**
-    
-    - Create a `vercel.json` file in the project root directory.
-    - Example `vercel.json`:
-        
-        ```json
-        {
-          "version": 2,
-          "builds": [
-            {
-              "src": "Finalty/settings.py",
-              "use": "@vercel/python",
-              "config": {
-                "maxLambdaSize": "15mb"
-              }
-            }
-          ]
-        }
-        ```
-        
-5. **Deploy to Vercel:**
-    
-    - Run `vercel` in the project root directory.
-    - Follow the prompts to configure your deployment.
-6. **Environment Variables:**
-    
-    - Set the necessary environment variables in the Vercel dashboard, especially those related to your Django project settings.
-7. **Finalize Deployment:**
-    
-    - After deployment, Vercel will provide a unique URL for your Django project.
-8. **Access Your Django App:**
-    
-    - Visit the provided URL to access your deployed Django app.
-
-## Additional Notes
-
-- Make sure your Django project is configured to allow requests from the Vercel domain in the `ALLOWED_HOSTS` setting.
-    
-- Adjust Django settings accordingly, especially if using a different database or secret keys.
-    
-- For detailed Vercel deployment options, refer to the Vercel Documentation.
-
-# Structure of the site
-
-```bash
-Finalty
-│   build_files.sh
-│   manage.py
-│   note.txt
-│   readme.md
-│   requirements.txt
-│   robots.txt
-│   vercel.json
-│
-├───base
-│   │   admin.py
-│   │   apps.py
-│   │   models.py
-│   │   sitemaps.py
-│   │   tests.py
-│   │   views.py
-│   │   __init__.py
-│   │
-│   ├───migrations
-│   │   │   0001_initial.py
-│   │   │   __init__.py
-│   │   │
-│   │   └───__pycache__
-│   │           0001_initial.cpython-311.pyc
-│   │           __init__.cpython-311.pyc
-│   │
-│   ├───templatetags
-│   │   │   djtemp.py
-│   │   │
-│   │   └───__pycache__
-│   │           djtemp.cpython-311.pyc
-│   │
-│   └───__pycache__
-│           admin.cpython-311.pyc
-│           apps.cpython-311.pyc
-│           models.cpython-311.pyc
-│           sitemaps.cpython-311.pyc
-│           views.cpython-311.pyc
-│           __init__.cpython-311.pyc
-│
-├───Finalty
-│   │   asgi.py
-│   │   settings.py
-│   │   urls.py
-│   │   wsgi.py
-│   │   __init__.py
-│   │
-│   └───__pycache__
-│           settings.cpython-311.pyc
-│           urls.cpython-311.pyc
-│           wsgi.cpython-311.pyc
-│           __init__.cpython-311.pyc
-│
-├───static
-│   └───images
-│           logo.png
-│           logo1.png
-│
-└───templates
-    │   index.html
-    │   list_out.html
-    │   underdev.html
-    │
-    └───backup
-            im.html
-            index.html
+Contributions are welcome! Please fork this repository, make your changes, and submit a pull request.
