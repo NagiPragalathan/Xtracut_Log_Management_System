@@ -7,8 +7,9 @@ from django.utils import timezone
 from django.db.models import Count
 import datetime
 from django.http import JsonResponse
+from django.contrib.auth.decorators import login_required 
 
-
+@login_required
 def dashboard(request):
     logs = LogModel.objects.all()
     total_log = len(logs)
