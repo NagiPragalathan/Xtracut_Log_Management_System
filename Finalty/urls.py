@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from base.Routes.ApiViews import *
 from base.Routes.views import *
+from base.Routes.Flow import *
 
 
 from django.contrib import admin
@@ -45,6 +46,12 @@ ViewsUrl = [
     path('test/delete/<uuid:log_id>/', delete_log, name='delete_log'),
 ]
 
+FlowUrl = [
+    path('dashboard/', dashboard, name='dashboard'),
+    path('filter/', filter, name='filter'),
+    path('api/get-chart-data/', get_chart_data, name='get_chart_data'),
+]
+
 urlpatterns = [
     path("admin/", admin.site.urls),
     # Seo Config...
@@ -54,6 +61,7 @@ urlpatterns = [
 
 urlpatterns+=ApiviewsUrl
 urlpatterns+=ViewsUrl
+urlpatterns+=FlowUrl
 
 urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
