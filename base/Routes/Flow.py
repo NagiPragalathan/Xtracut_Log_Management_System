@@ -52,6 +52,8 @@ def dashboard(request):
         logs = logs.filter(user_mailid__icontains=user_mailid_filter)
 
     unique_emails = LogModel.objects.values_list('user_mailid', flat=True).distinct()
+    unique_plugins = LogModel.objects.values_list('Plugin', flat=True).distinct()
+    unique_status_codes = LogModel.objects.values_list('StatusCode', flat=True).distinct()
 
     return render(request, 'dashboard.html',  {
         'logs': logs,
@@ -63,7 +65,9 @@ def dashboard(request):
         'user_mailid_filter': user_mailid_filter,
         'unique_emails': unique_emails,
         "success":len(success),
-        "error":len(error)
+        "error":len(error),
+        "unique_plugins":len(unique_plugins),
+        "unique_status_codes":len(unique_status_codes)
     })
 
 def filter(request):
