@@ -1,224 +1,91 @@
-<!-- component -->
-<!-- Google Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link
-  href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;1,100;1,200&display=swap"
-  rel="stylesheet" />
 <script src="https://cdn.tailwindcss.com"></script>
-<!-- Tab Icon (Favicon) -->
-<link rel="icon" href="https://github.com/NagiPragalathan/GeeksforGeeks_files/blob/main/78974316550-removebg-preview.png?raw=true" type="image/x-icon" />
 
-<!-- Tab Title -->
-<title>Xtracut | Log Management System</title>
-
-<style>
-  section {
-    font-family: "Poppins", sans-serif;
-  }
-
-  /* Highlighted nav link */
-  .active-link {
-    color: #1d4ed8;
-    font-weight: bold;
-  }
-</style>
-
-<!-- Page Main -->
-<main class="flex flex-col items-center justify-center mt-32">
-  <header class="container">
-    <!-- Navbar -->
-    <nav
-      class="flex justify-between md:justify-around py-4 bg-white/80 backdrop-blur-md shadow-md w-full px-10 fixed top-0 left-0 right-0 z-10 px-8 md:px-3">
-      <!-- Logo Container -->
-      <div class="flex items-center">
-        <!-- Logo -->
-        <a class="cursor-pointer">
-          <img
-            class="h-10"
-            src="https://github.com/NagiPragalathan/Xtracut_Log_Management_System/blob/30d16e6da23112429fb2d6c5ceb3d1d187746857/static/xtracut_logo_retina_dark_31-7.png?raw=true"
-            alt="Store Logo" />
-        </a>
-      </div>
-
-      <!-- Links Section -->
-      <div
-        id="navbar"
-        class="items-center md:space-x-8 justify-center justify-items-start md:justify-items-center md:flex md:pt-2 w-full left-0 top-16 px-5 md:px-10 py-3 md:py-0 border-t md:border-t-0">
-        <a href="#home"
-          class="flex text-gray-600 hover:text-blue-500 cursor-pointer transition-colors duration-300">
-          Home
-        </a>
-
-        <a href="#overview"
-          class="flex text-gray-600 cursor-pointer transition-colors duration-300">
-          Overview
-        </a>
-
-        <a href="#features"
-          class="flex text-gray-600 hover:text-blue-500 cursor-pointer transition-colors duration-300">
-          Features
-        </a>
-      </div>
-
-      <!-- Auth Links -->
-      <div class="flex items-center space-x-5 hidden md:flex">
-        <a
-          class="flex text-gray-600 cursor-pointer transition-colors duration-300 font-semibold text-blue-600">
-          Login
-        </a>
-      </div>
-    </nav>
-  </header>
-
-  <!-- Hero Section -->
-  <section id="home"
-    class="flex flex-wrap items-center -mx-3 font-sans px-4 mx-auto w-full lg:max-w-screen-lg sm:max-w-screen-sm md:max-w-screen-md pb-20">
-    <!-- Column-1 -->
-    <div class="px-3 w-full lg:w-2/5">
-      <div
-        class="mx-auto mb-8 max-w-lg text-center lg:mx-0 lg:max-w-md lg:text-left">
-        <h2 class="mb-4 text-3xl font-bold text-left lg:text-5xl">
-          Xtracut Log Management System
-          <span class="text-5xl text-blue-500 leading-relaxeds">
-            Dashboard
-          </span>
-        </h2>
-
-        <p
-          class="visible mx-0 mt-3 mb-0 text-sm leading-relaxed text-left text-slate-400">
-          Monitor plugin usage and system performance in real-time.
-        </p>
-      </div>
-
-      <div class="text-center lg:text-left">
-        <a
-          class="block visible py-4 px-8 mb-4 text-xs font-semibold tracking-wide leading-none text-white bg-blue-500 rounded cursor-pointer sm:mr-3 sm:mb-0 sm:inline-block">
-          Key Features
-        </a>
-      </div>
-    </div>
-
-    <!-- Column-2 -->
-    <div class="px-3 mb-12 w-full lg:mb-0 lg:w-3/5">
-      <div class="flex justify-center items-center">
-        <svg class="block max-w-full h-auto align-middle lg:max-w-lg" xmlns="http://www.w3.org/2000/svg" height="400" viewBox="0 0 524.67004 627.58314" xmlns:xlink="http://www.w3.org/1999/xlink">
-            <path d="M369.04619,148.0378h51.762v17.04364c0,28.5682-23.19375,51.76195-51.76195,51.76195h-.00005v-68.80558h0Z" transform="translate(789.85437 364.88118) rotate(-180)" fill="#2f2e41"></path>
-            <polygon points="409.33502 185.02664 418.23482 225.05637 366.08305 216.39672 387.33502 178.53845 409.33502 185.02664" fill="#a0616a"></polygon>
-            <polygon points="409.33502 185.02664 418.23482 225.05637 366.08305 216.39672 387.33502 178.53845 409.33502 185.02664" opacity=".1"></polygon>
-            <rect x="359.33502" y="270.53845" width="50" height="74" transform="translate(768.67004 615.07691) rotate(-180)" fill="#a0616a"></rect>
-            <path d="M441.83502,405.03845l-11,59s7,41-14,83l-14,43-21-3s13-32,13-46c0-14,3-68,3-68l-1.5-61.61811,45.5-6.38189Z" fill="#2f2e41"></path>
-            <path d="M378.83502,586.03845s24-9,26,4l-1,6s9,27-4,29c-13,2-25,5-26-1-1-6-.98425-13.48966,1.50787-18.74483,2.49213-5.25517,3.49213-19.25517,3.49213-19.25517Z" fill="#2f2e41"></path>
-            <g>
-            <path d="M366.13446,395.88629l-5.84242,59.73162s-18.12633,37.43576-9.63539,83.61913l1.48898,45.19716,21.00587,2.95865s-3.58764-34.353,.30589-47.80069c3.89353-13.44769,16.0298-66.15169,16.0298-66.15169l18.5774-58.77007-41.93013-18.7841Z" fill="#2f2e41"></path>
-            <path d="M376.31126,587.26662s-20.5502-15.31957-26.08672-3.38865l-.70811,6.04141s-16.1539,23.43185-4.22298,28.96837c11.93092,5.53652,22.62319,11.75548,25.25239,6.2703,2.62921-5.48519,4.69702-12.68375,3.76473-18.42469-.9323-5.74094,2.00069-19.46674,2.00069-19.46674Z" fill="#2f2e41"></path>
-            </g>
-            <path d="M429.83502,310.53845c23.51917,21.94757,25.26404,56.67346,11.5,98,0,0-44,30-76-8l-16-77,80.5-13Z" fill="#2f2e41"></path>
-            <path d="M390.33502,203.53845l25,4-2,63,28,56-36,18s-28-53-33-86c-5-33-2-57-2-57l20,2Z" fill="#6c63ff"></path>
-            <path d="M371.33502,205.53845l-25,4,2,63-6,58,14,16s28-53,33-86,2-57,2-57l-20,2Z" fill="#6c63ff"></path>
-            <path d="M401.33502,207.03845l5.5-1.5s19.5-2.5,22.5,5.5c3,8,2,55,2,55,0,0,5.16,57.68504-14.92,58.34252-20.08,.65748-16.08-47.34252-16.08-47.34252l1-70Z" fill="#6c63ff"></path>
-            <circle cx="400.60838" cy="170.13134" r="25.881" fill="#a0616a"></circle>
-            <path d="M368.33502,209.03845l-5.5-1.5s-19.5-2.5-22.5,5.5-2,55-2,55c0,0-5.16,57.68504,14.92,58.34252s16.08-47.34252,16.08-47.34252l-1-70Z" fill="#6c63ff"></path>
-            <path d="M385.65786,205.75047c-5.55216-1.40863-11.84681,4.52132-14.06128,13.24853-.93243,3.47409-1.01931,7.12088-.2534,10.63535l-2.38571,9.92043-.17551-.00924-18.81824,44.34887c-4.37547,10.31165-3.91314,22.14968,1.66767,31.86201,3.3199,5.77765,7.67792,9.66177,12.79497,5.69682,8.49085-6.57912,14.03686-44.24916,16.56905-65.88826l5.85496-21.9959c2.35018-2.72464,4.01347-5.97257,4.85067-9.47191,2.2149-8.72385-.49107-16.93801-6.04318-18.34671Z" fill="#a0616a"></path>
-            <path d="M351.0597,191.06934c1.31647-4.00284,3.91522-7.50723,5.07796-11.55742,1.54386-5.37763,4.83076,6.55243,5.15143,.96678,.60951-10.61668,16.81288-37.92626,26.06316-43.17205,9.25028-5.24583,14.56315-3.66417,23.98727,1.26249,0,0,4.57463,.29093,10.26981,3.10267,5.69518,2.81174,10.82161,7.31486,13.03674,13.26749,1.7558,4.7183,1.56147,9.89986,2.14813,14.89992,1.63436,13.92994,9.44292,27.17801,7.76691,41.10298-.52286,4.3445-2.17418,8.83707-5.72639,11.39244-3.55221,2.55534-9.29104,2.27736-11.62924-1.42142-.79788-1.26218-1.13531-2.75965-1.81906-4.08713-.6838-1.32748-1.91931-2.56501-3.41201-2.5237-2.2436,.06211-3.38562,3.07261-2.5009,5.13537s2.96377,3.30817,4.91583,4.41597c-4.6491,2.0915-10.41629,1.44022-14.48185-1.63548-4.06552-3.0757-6.26097-8.44832-5.51283-13.49099,1.05424-7.10612,11.4065-5.63531,12.62603-12.71492,.88773-5.15371,4.00542-13.77714,3.15622-18.93732-.8492-5.16022-4.92762,1.08784-.63124-1.89373-4.72678,2.27867-14.83731-13.30983-19.78567-15.05584-4.94831-1.74601-9.14394-5.5267-11.39402-10.26715-5.24845,7.60821-9.86523,5.54211-11.7449,14.59185-1.87967,9.04974-.14171,29.60975,7.598,34.66228-3.09743,2.11334-5.56661,5.13552-7.01993,8.59211-.82334,1.95819-1.35711,4.10081-2.72366,5.72716-2.60993,3.10617-7.4291,3.29511-11.27027,1.98909-4.76288-1.61941-8.83514-5.17625-11.08048-9.67806-2.24534-4.50181-2.63675-9.89451-1.06507-14.67338Z" fill="#2f2e41"></path>
-            <path d="M0,626.13577c0,.66003,.53003,1.19,1.19006,1.19H523.48004c.65997,0,1.19-.52997,1.19-1.19,0-.65997-.53003-1.19-1.19-1.19H1.19006c-.66003,0-1.19006,.53003-1.19006,1.19Z" fill="#3f3d56"></path>
-            <g>
-            <path d="M340.03771,.99983H134.36885c-23.32296,0-42.22995,18.90699-42.22995,42.22995V583.66267c0,23.32291,18.90695,42.22986,42.22986,42.22986h205.66894c23.32296,0,42.22995-18.90699,42.22995-42.22995V43.22978c0-23.32296-18.90699-42.22995-42.22995-42.22995Z" fill="#fff"></path>
-            <path d="M340.03782,626.89209H134.36888c-23.83691,0-43.22998-19.39258-43.22998-43.22949V43.22998C91.1389,19.39307,110.53196,0,134.36888,0h205.66895c23.83691,0,43.22998,19.39307,43.22998,43.22998V583.6626c0,23.83691-19.39307,43.22949-43.22998,43.22949ZM134.36888,2c-22.73438,0-41.22998,18.49561-41.22998,41.22998V583.6626c0,22.73438,18.49561,41.22949,41.22998,41.22949h205.66895c22.73438,0,41.22998-18.49512,41.22998-41.22949V43.22998c0-22.73438-18.49561-41.22998-41.22998-41.22998H134.36888Z" fill="#3f3d56"></path>
-            <path d="M75.14368,94.56643c-1.80561,0-3.27392,1.46831-3.27392,3.27392v26.1914c0,1.80561,1.46831,3.27392,3.27392,3.27392s3.27392-1.46831,3.27392-3.27392v-26.1914c0-1.80561-1.46831-3.27392-3.27392-3.27392Z" fill="#3f3d56"></path>
-            <path d="M354.93558,87.46124h-82.66786c-3.50634,0-6.35907-2.85273-6.35907-6.35907s2.85273-6.35907,6.35907-6.35907h82.66786c3.50634,0,6.35907,2.85273,6.35907,6.35907s-2.85273,6.35907-6.35907,6.35907Z" fill="#e6e6e6"></path>
-            <path d="M277.38221,137.46854h-80.3571c-2.02587,0-3.67427-1.64841-3.67427-3.67428s1.64841-3.67351,3.67427-3.67351h80.3571c2.02587,0,3.67351,1.64765,3.67351,3.67351,0,2.02587-1.64764,3.67427-3.67351,3.67427Z" fill="#6c63ff"></path>
-            <ellipse cx="78.32235" cy="92.07002" rx="64.899" ry="63.53157" fill="#6c63ff"></ellipse>
-            <path d="M100.34912,60.02429c-8.64008,15.73267-17.28021,31.46545-25.92029,47.19818-5.50665-9.72955-10.98322-19.47626-16.50342-29.19818-1.90643-3.3576-7.09204-.33765-5.18079,3.02832,6.39911,11.2699,12.73193,22.57727,19.13104,33.84717,1.09412,1.92694,4.09796,1.97168,5.18085,0,9.49115-17.28241,18.9823-34.56482,28.47345-51.84717,1.8598-3.38647-3.31964-6.41742-5.18085-3.02832Z" fill="#fff"></path>
-            <rect x="117.61763" y="14.65784" width="46.49807" height="5.96129" rx=".31021" ry=".31021" fill="#e6e6e6"></rect>
-            <circle cx="318.33631" cy="15.8501" r="4.76903" fill="#e6e6e6"></circle>
-            <circle cx="331.45115" cy="15.8501" r="4.76903" fill="#e6e6e6"></circle>
-            <circle cx="344.56599" cy="15.8501" r="4.76903" fill="#e6e6e6"></circle>
-            <path d="M133.86826,157.13577c0,.66003,.53003,1.19,1.19006,1.19h204.28998c.65997,0,1.19-.52997,1.19-1.19,0-.65997-.53003-1.19-1.19-1.19H135.05832c-.66003,0-1.19006,.53003-1.19006,1.19Z" fill="#3f3d56"></path>
-            <g>
-            <path d="M319.7578,250.66658h-122.59803c-2.02587,0-3.67427-1.64842-3.67427-3.67428s1.64841-3.67351,3.67427-3.67351h122.59803c2.02587,0,3.67351,1.64765,3.67351,3.67352,0,2.02587-1.64764,3.67427-3.67351,3.67427Z" fill="#6c63ff"></path>
-            <path d="M319.7578,303.66658h-122.59803c-2.02587,0-3.67427-1.64842-3.67427-3.67428s1.64841-3.67351,3.67427-3.67351h122.59803c2.02587,0,3.67351,1.64765,3.67351,3.67352,0,2.02587-1.64764,3.67427-3.67351,3.67427Z" fill="#6c63ff"></path>
-            <path d="M319.7578,356.66658h-122.59803c-2.02587,0-3.67427-1.64842-3.67427-3.67428s1.64841-3.67351,3.67427-3.67351h122.59803c2.02587,0,3.67351,1.64765,3.67351,3.67352,0,2.02587-1.64764,3.67427-3.67351,3.67427Z" fill="#6c63ff"></path>
-            <circle cx="159.97525" cy="246.53845" r="9" fill="#6c63ff"></circle>
-            <path d="M158.97516,261.53845v-2c7.44385,0,13.5-6.05615,13.5-13.5s-6.05615-13.5-13.5-13.5v-2c8.54688,0,15.5,6.95312,15.5,15.5s-6.95312,15.5-15.5,15.5Z" fill="#3f3d56"></path>
-            <circle cx="159.97525" cy="299.53845" r="9" fill="#6c63ff"></circle>
-            <path d="M158.97516,314.53845v-2c7.44385,0,13.5-6.05566,13.5-13.5,0-7.44385-6.05615-13.5-13.5-13.5v-2c8.54688,0,15.5,6.95312,15.5,15.5s-6.95312,15.5-15.5,15.5Z" fill="#3f3d56"></path>
-            <circle cx="159.97525" cy="352.53845" r="9" fill="#6c63ff"></circle>
-            <path d="M158.97516,367.53845v-2c7.44385,0,13.5-6.05566,13.5-13.5s-6.05615-13.5-13.5-13.5v-2c8.54688,0,15.5,6.95312,15.5,15.5s-6.95312,15.5-15.5,15.5Z" fill="#3f3d56"></path>
-            </g>
-            </g>
-            <path d="M384.01219,203.75047c5.55216-1.40863,11.84681,4.52132,14.06128,13.24853,.93243,3.47409,1.01931,7.12088,.2534,10.63535l2.38571,9.92043,.17551-.00924,18.81824,44.34887c4.37547,10.31165,3.91314,22.14968-1.66767,31.86201-3.3199,5.77765-7.67792,9.66177-12.79497,5.69682-8.49085-6.57912-14.03686-44.24916-16.56905-65.88826l-5.85496-21.9959c-2.35018-2.72464-4.01347-5.97257-4.85067-9.47191-2.2149-8.72385,.49107-16.93801,6.04318-18.34671Z" fill="#a0616a"></path>
-            <polygon points="405.38874 228.05282 384.33502 243.01874 394.86188 309.31266 408.0646 326.38767 423.44391 321.0686 427.94066 289.72998 422.64886 259.42289 405.38874 228.05282" fill="#6c63ff"></polygon>
+<!-- component -->
+<div class="relative isolate overflow-hidden bg-gray-900">
+  <svg class="absolute inset-0 -z-10 h-full w-full stroke-white/10 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]" aria-hidden="true">
+    <defs>
+      <pattern id="983e3e4c-de6d-4c3f-8d64-b9761d1534cc" width="200" height="200" x="50%" y="-1" patternUnits="userSpaceOnUse">
+        <path d="M.5 200V.5H200" fill="none" />
+      </pattern>
+    </defs>
+    <svg x="50%" y="-1" class="overflow-visible fill-gray-800/20">
+      <path d="M-200 0h201v201h-201Z M600 0h201v201h-201Z M-400 600h201v201h-201Z M200 800h201v201h-201Z" stroke-width="0" />
+    </svg>
+    <rect width="100%" height="100%" stroke-width="0" fill="url(#983e3e4c-de6d-4c3f-8d64-b9761d1534cc)" />
+  </svg>
+  <div class="absolute left-[calc(50%-4rem)] top-10 -z-10 transform-gpu blur-3xl sm:left-[calc(50%-18rem)] lg:left-48 lg:top-[calc(50%-30rem)] xl:left-[calc(50%-24rem)]" aria-hidden="true">
+    <div class="aspect-[1108/632] w-[69.25rem] bg-gradient-to-r from-[#80caff] to-[#4f46e5] opacity-20" style="clip-path: polygon(73.6% 51.7%, 91.7% 11.8%, 100% 46.4%, 97.4% 82.2%, 92.5% 84.9%, 75.7% 64%, 55.3% 47.5%, 46.5% 49.4%, 45% 62.9%, 50.3% 87.2%, 21.3% 64.1%, 0.1% 100%, 5.4% 51.1%, 21.4% 63.9%, 58.9% 0.2%, 73.6% 51.7%)"></div>
+  </div>
+  <div class="mx-auto max-w-7xl px-6 pb-24 pt-10 sm:pb-32 lg:flex lg:px-8 lg:py-40">
+    <div class="mx-auto max-w-2xl flex-shrink-0 lg:mx-0 lg:max-w-xl lg:pt-8">
+      <img class="h-11" src="https://github.com/NagiPragalathan/Xtracut_Log_Management_System/blob/30d16e6da23112429fb2d6c5ceb3d1d187746857/static/xtracut_logo_retina_dark_31-7.png?raw=true" alt="Your Company">
+      <div class="mt-24 sm:mt-32 lg:mt-16">
+        <a href="#" class="inline-flex space-x-6">
+          <span class="rounded-full bg-indigo-500/10 px-3 py-1 text-sm font-semibold leading-6 text-cyan-500 ring-1 ring-inset ring-indigo-500/20">What's new</span>
+          <span class="inline-flex items-center space-x-2 text-sm font-medium leading-6 text-gray-300">
+            <span>Overview</span>
+            <svg class="h-5 w-5 text-gray-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" />
             </svg>
-        <!-- SVG or Image goes here -->
+          </span>
+        </a>
+      </div>
+      <h1 class="mt-10 text-4xl font-bold tracking-tight text-white sm:text-6xl">Xtracut Log Management System</h1>
+      <p class="mt-6 text-lg leading-8 text-gray-300">The Xtracut Log Management System is a comprehensive dashboard built using the Django framework to monitor various plugins utilized by users. It provides real-time insights into plugin usage, allowing users to filter data by time periods such as 1 day, 1 week, 1 month, or custom date ranges. This system is designed to help administrators easily track the status of plugins, view detailed logs, and assess the performance or errors occurring across different users.</p>
+      <div class="mt-10 flex items-center gap-x-6">
+        <a href="/login" class="rounded-md bg-orange-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400">Get started</a>
+        <a href="/login" class="text-sm font-semibold leading-6 text-white">Learn more <span aria-hidden="true">→</span></a>
       </div>
     </div>
-  </section>
-
-  <!-- Parallax Background -->
-  <section id="overview"
-    class="flex flex-col w-full h-[500px] bg-cover bg-fixed bg-center flex justify-center items-center"
-    style="
-      background-image: url(https://images.unsplash.com/photo-1642427749670-f20e2e76ed8c?auto=format&fit=crop&w=880&q=80);
-    ">
-    <h1 class="text-white text-5xl font-semibold mt-20 mb-10">
-      Real-time Monitoring & Insights
-    </h1>
-  </section>
-
-  <!-- Content Section -->
-  <section id="features" class="p-20 space-y-8">
-    <h1 class="text-4xl text-center my-20">Xtracut Log Management System Overview</h1>
-
-    <p>
-      The <strong>Xtracut Log Management System</strong> is a comprehensive dashboard built using the Django framework to monitor various plugins utilized by users. It provides real-time insights into plugin usage, allowing users to filter data by time periods such as 1 day, 1 week, 1 month, or custom date ranges. This system is designed to help administrators easily track the status of plugins, view detailed logs, and assess the performance or errors occurring across different users.
-    </p>
-
-    <h2 class="text-3xl text-center my-10">Features</h2>
-    <ul class="list-disc list-inside">
-      <li>Plugin Monitoring: Track and monitor the usage of plugins by different users.</li>
-      <li>Filters: Filter data by specific time frames (1 day, 1 week, 1 month) or define a custom date range.</li>
-      <li>User-specific Insights: View plugin usage details and errors specific to individual users.</li>
-      <li>Dashboard Overview: Visual representation of plugin activity, including success and failure rates.</li>
-      <li>Status Indicators: Displays the current status of each plugin (active/inactive/errors).</li>
-      <li>Real-Time Updates: Automatically updates the status of plugins in real-time.</li>
-      <li>Django-based Backend: Built using the Django web framework with MongoDB for data storage.</li>
-    </ul>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-gray-800 pt-10 sm:mt-10 pt-10 w-full">
-    <div class="max-w-6xl m-auto text-gray-800 flex flex-wrap justify-left">
-      <!-- Footer content -->
-    </div>
-    <div class="pt-2">
-      <div class="flex pb-5 px-3 m-auto pt-5 border-t border-gray-500 text-gray-400 text-sm flex-col md:flex-row max-w-6xl">
-        <div class="mt-2">© 2024 Xtracut Log Management System. All Rights Reserved.</div>
+    <div class="mx-auto mt-16 flex max-w-2xl sm:mt-24 lg:ml-10 lg:mr-0 lg:mt-0 lg:max-w-none lg:flex-none xl:ml-32">
+      <div class="max-w-3xl flex-none sm:max-w-5xl lg:max-w-none">
+        <img src="https://spruko.com/demo/ren/demo/img/ltr-screens/screen2.jpg" alt="App screenshot" width="2432" height="1442" class="w-[76rem] rounded-md bg-white/5 shadow-2xl ring-1 ring-white/10">
       </div>
     </div>
-  </footer>
-</main>
+  </div>
+</div>
 
-<!-- JavaScript for scrolling effect -->
-<script>
-  document.addEventListener('scroll', function () {
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('#navbar a');
+<!-- Features Section -->
+<div class="bg-gray-100 py-16">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <h2 class="text-3xl font-bold text-gray-900 text-center">Features</h2>
+    <div class="mt-10 grid grid-cols-1 gap-y-12 gap-x-8 sm:grid-cols-2 lg:grid-cols-3">
+      
+      <div class="feature">
+        <h3 class="text-xl font-semibold text-gray-700">Plugin Monitoring</h3>
+        <p class="text-base text-gray-600">Track and monitor the usage of plugins by different users.</p>
+      </div>
 
-    let currentSection = '';
+      <div class="feature">
+        <h3 class="text-xl font-semibold text-gray-700">Filters</h3>
+        <p class="text-base text-gray-600">Filter data by specific time frames (1 day, 1 week, 1 month) or define a custom date range.</p>
+      </div>
 
-    sections.forEach((section) => {
-      const sectionTop = section.offsetTop - 100;
-      if (pageYOffset >= sectionTop) {
-        currentSection = section.getAttribute('id');
-      }
-    });
+      <div class="feature">
+        <h3 class="text-xl font-semibold text-gray-700">User-specific Insights</h3>
+        <p class="text-base text-gray-600">View plugin usage details and errors specific to individual users.</p>
+      </div>
 
-    navLinks.forEach((navLink) => {
-      navLink.classList.remove('active-link');
-      if (navLink.getAttribute('href').substring(1) === currentSection) {
-        navLink.classList.add('active-link');
-      }
-    });
-  });
-</script>
+      <div class="feature">
+        <h3 class="text-xl font-semibold text-gray-700">Dashboard Overview</h3>
+        <p class="text-base text-gray-600">Visual representation of plugin activity, including success and failure rates.</p>
+      </div>
+
+      <div class="feature">
+        <h3 class="text-xl font-semibold text-gray-700">Status Indicators</h3>
+        <p class="text-base text-gray-600">Displays the current status of each plugin (active/inactive/errors).</p>
+      </div>
+
+      <div class="feature">
+        <h3 class="text-xl font-semibold text-gray-700">Real-Time Updates</h3>
+        <p class="text-base text-gray-600">Automatically updates the status of plugins in real-time.</p>
+      </div>
+
+      <div class="feature">
+        <h3 class="text-xl font-semibold text-gray-700">Django-based Backend</h3>
+        <p class="text-base text-gray-600">Built using the Django web framework with MongoDB for data storage.</p>
+      </div>
+
+    </div>
+  </div>
+</div>
