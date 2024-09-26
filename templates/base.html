@@ -1746,7 +1746,7 @@ video {
 
 
         async function fetchData() {
-          const response = await fetch('/api/get-chart-data');  // Fetch the data from Django view
+          const response = await fetch('/api/get-chart-data');  // Fetch data for plugin 'sample'
           const data = await response.json();
           return data;
       }
@@ -1762,33 +1762,23 @@ video {
                   datasets: [
                       {
                           label: 'Success',
-                          data: chartData.datasets.active,
+                          data: chartData.datasets.success,
                           borderWidth: 1,
                           fill: true,
-                          pointBackgroundColor: 'rgb(59, 130, 246)',
-                          borderColor: 'rgb(59, 130, 246)',
-                          backgroundColor: 'rgb(59 130 246 / .05)',
-                          tension: .2
+                          pointBackgroundColor: 'rgb(59, 130, 246)',  // Blue
+                          borderColor: 'rgb(59, 130, 246)',  // Blue border
+                          backgroundColor: 'rgba(59, 130, 246, 0.1)',  // Light blue background
+                          tension: 0.2
                       },
                       {
                           label: 'Error',
-                          data: chartData.datasets.completed,
+                          data: chartData.datasets.error,
                           borderWidth: 1,
                           fill: true,
-                          pointBackgroundColor: 'rgb(16, 185, 129)',
-                          borderColor: 'rgb(16, 185, 129)',
-                          backgroundColor: 'rgb(16 185 129 / .05)',
-                          tension: .2
-                      },
-                      {
-                          label: 'Warning',
-                          data: chartData.datasets.canceled,
-                          borderWidth: 1,
-                          fill: true,
-                          pointBackgroundColor: 'rgb(244, 63, 94)',
-                          borderColor: 'rgb(244, 63, 94)',
-                          backgroundColor: 'rgb(244 63 94 / .05)',
-                          tension: .2
+                          pointBackgroundColor: 'rgb(244, 63, 94)',  // Red
+                          borderColor: 'rgb(244, 63, 94)',  // Red border
+                          backgroundColor: 'rgba(244, 63, 94, 0.1)',  // Light red background
+                          tension: 0.2
                       },
                   ]
               },
