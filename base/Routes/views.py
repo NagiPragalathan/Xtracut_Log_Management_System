@@ -52,3 +52,6 @@ def delete_log(request, log_id):
         return redirect('log_list')
     return render(request, 'admin/delete_log.html', {'log_entry': log_entry})
  
+ 
+# def render_html(request):
+#     return render(request, "auth/login.html")

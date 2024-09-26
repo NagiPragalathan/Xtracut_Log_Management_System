@@ -78,7 +78,8 @@ DATABASES = {
        'ENGINE': 'djongo',
        'CLIENT': {
            
-           'host': "mongodb+srv://nagi:nagi@cluster0.ohv5gsc.mongodb.net/LogManagement",
+        #    'host': "mongodb+srv://nagi:nagi@cluster0.ohv5gsc.mongodb.net/LogManagement",
+           'host': "mongodb+srv://ciddarth:applexc@cluster0.mg1di.mongodb.net/LogManagement",
            'name':'LogManagement',
            'authMechanism': "SCRAM-SHA-1",
         }
@@ -144,3 +145,9 @@ MEDIA_URL = '/media/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# Redirect to this URL after login
+LOGIN_REDIRECT_URL = '/dashboard/'
+
+# Redirect to this URL after logout
+LOGOUT_REDIRECT_URL = '/login/'
