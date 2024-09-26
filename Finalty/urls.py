@@ -27,9 +27,16 @@ from Finalty import settings
 from django.contrib.sitemaps.views import sitemap
 from base.sitemaps import StaticViewSitemap
 
+from django.contrib.auth import views as auth_views
+
 sitemaps = {
     'static': StaticViewSitemap,
 }
+
+Auth=[
+    path('login/', auth_views.LoginView.as_view(template_name='login.html'), name='login'),
+    path('logout/', auth_views.LogoutView.as_view(), name='logout'),
+]
 
 
 ApiviewsUrl = [
@@ -49,6 +56,7 @@ ViewsUrl = [
 FlowUrl = [
     path('dashboard/', dashboard, name='dashboard'),
     path('filter/', filter, name='filter'),
+    path('', Home, name='Home'),
     path('api/get-chart-data/', get_chart_data, name='get_chart_data'),
 ]
 
@@ -62,6 +70,7 @@ urlpatterns = [
 urlpatterns+=ApiviewsUrl
 urlpatterns+=ViewsUrl
 urlpatterns+=FlowUrl
+urlpatterns+=Auth
 
 urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
