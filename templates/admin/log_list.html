@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Log List</title>
+</head>
+<body>
+    <h1>Log Entries</h1>
+    <a href="{% url 'create_log' %}">Create New Log</a>
+    <ul>
+        {% for log in logs %}
+            <li>
+                {{ log.log_msg }} - {{ log.StatusCode }} - {{ log.user_mailid }} - {{ log.Plugin }} - {{ log.function }}
+                <a href="{% url 'update_log' log.userid %}">Edit</a> | 
+                <a href="{% url 'delete_log' log.userid %}">Delete</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

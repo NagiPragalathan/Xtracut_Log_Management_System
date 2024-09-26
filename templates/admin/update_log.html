@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Log</title>
+</head>
+<body>
+    <h1>Update Log</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="log_msg">Log Message:</label>
+        <input type="text" id="log_msg" name="log_msg" value="{{ log_entry.log_msg }}" required><br>
+
+        <label for="StatusCode">Status Code:</label>
+        <input type="text" id="StatusCode" name="StatusCode" value="{{ log_entry.StatusCode }}" required><br>
+
+        <label for="user_mailid">User Email:</label>
+        <input type="email" id="user_mailid" name="user_mailid" value="{{ log_entry.user_mailid }}" required><br>
+
+        <label for="Plugin">Plugin:</label>
+        <input type="text" id="Plugin" name="Plugin" value="{{ log_entry.Plugin }}" required><br>
+
+        <label for="function">Function:</label>
+        <input type="text" id="function" name="function" value="{{ log_entry.function }}" required><br>
+
+        <button type="submit">Update Log</button>
+    </form>
+    <a href="{% url 'log_list' %}">Back to Log List</a>
+</body>
+</html>
