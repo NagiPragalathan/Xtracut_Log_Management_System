@@ -1,1555 +1,219 @@
-<!DOCTYPE html>
-{% load static %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Finalty - Home</title>
-
-    {% comment %} for seo  {% endcomment %}
-    <meta name="description" content="Discover FiNaLTY Fintech - Revolutionizing property management with seamless rent payments, transparent financial records, tenant-landlord communication, and innovative solutions. Experience stress-free living and secure your dream property with FiNaLTY." />
-    <meta property="og:title" content="finalty">
-    <meta property="og:description" content="FiNaLTY Fintech revolutionizes property management with a seamless app, ensuring hassle-free rent payments, proactive financial interventions, and transparent, tenant-centric experiences. Founded on a Sunday spark, it transforms rental dynamics globally, addressing challenges faced by landlords and tenants for a new era of innovation">
-    <meta property="og:image" content="{% static 'images/logo1.png' %}">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://finalty.in/">
-    <meta name="twitter:title" content="Finalty">
-    <meta name="twitter:description" content="FiNaLTY Fintech revolutionizes property management with a seamless app, ensuring hassle-free rent payments, proactive financial interventions, and transparent, tenant-centric experiences. Founded on a Sunday spark, it transforms rental dynamics globally, addressing challenges faced by landlords and tenants for a new era of innovation">
-    <meta name="twitter:image" content="{% static 'images/logo1.png' %}">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="keywords" content="Property Management, Rent Payments, Tenant-Landlord Communication, Financial Transparency, Rental Innovations, Real Estate Technology, Seamless Transactions, Housing Community, Landlord Services, Tenant Benefits, NRI Property Investment, Issue Resolution, Receipt Values, FiNaLTY Fintech, Tenant Behavior, Legal Action, Transparent Records, Financial History, Exclusive Offers, Hassle-Free Payments, Intervention, Financial Responsibility, Damage Reporting, Formalities Redefined, Post-Matching Processes, Agreement Handling, Government Proofs, Non-Resident Indian, Swift Issue Resolution, Comfortable Living, Receipt Significance, Rent Payment Solutions, Market Insights, Founders' Vision, Positive Change, Empowering Landlords, Swift Sunday Decision, Rent Transaction Revolution, Personal Challenge, Global Solution, Analyzing Rent Payment Delays, Transparent Financial Records, Timely Payments, Financial Safety Net, Nominal Fee, Community Financial Health, Swift and Effective, Seamless Living Experience, Prompt Response, Comprehensive Solutions, Innovative Platform, Clear Transactions, Efficient Matchmaking, Sophisticated Living, Stress-Free Payments, Proactive Safeguards, Vigilant Guardian, Informed Decisions, Trustworthy Tenants, Responsible Living" />
-    {% comment %} =============================================================================================== {% endcomment %}
-    
-    <link rel="icon" href="{% static 'images/logo1.png' %}" type="image/x-icon">
-    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-    <script src="https://unpkg.com/flowbite@1.4.1/dist/flowbite.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" integrity="sha512-TyUaMbYrKFZfQfp+9nQGOEt+vGu4nKzLk0KaV3nFifL3K8n7lzb8DayTzLOK0pNyzxGJzGRSw78e8xqJhURJ3Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo+Play:wght@700&display=swap" rel="stylesheet">
-</head>
-
-<body>
-    <!-- Spinner Start -->
-    <div id="spinner" class="opacity-100 block w-full vh-100 bg-white fixed translate-middle top-50 start-50  flex items-center justify-center">
-        <div class="spinner-grow orange_color" role="status"></div>
-    </div>
-    <!-- Spinner End -->
-    <style>
-
-        @media (min-width: 1027px) {
-            #menu_control{
-                margin-left: -15%;
-            }
-        }
-        #titles{
-            font-size: 133%;
-            border-bottom: 3px double black;
-        }
-        #underLine{
-            border-radius: 10px;
-            margin-bottom:20px;
-        }
-          
-        #about_p{
-            font-size: 111%;
-            text-align: justify;
-        }
-        #heading_h1{
-            font-weight: 700px !important;
-            font-family: sans-serif;
-            font-size: 190%;
-        }
-        #main_name{
-            font-size: 128%;
-        }
-        #page{
-            padding: 4% 0%;
-        }
-      #points{
-            font-family: sans-serif;
-            font-weight: 550;
-            display: flex;
-            font-size: 121%;
-            padding: 6px;
-            justify-content: flex-start;
-            align-items: baseline;
-        }
-
-        h1{
-            font-family: sans-serif;
-            font-size: x-large;
-        }
-        #icon_arrow{ 
-            margin-right: 10px;
-        }
-        h4{
-            font-size: 20px;
-            font-weight: bold;
-        }
-        .orange_color{
-            color:#FC4C01
-        }
-        .orange_border{
-            font-size: 20px;
-            border-bottom: 5px solid #417DA0;
-
-        }
-        .orange_background{
-            background-color:#FC4C01;
-        }
-        .orange_background1{
-            border-bottom: 2px solid #fc4c01;
-        }
-        .bottom_color{
-            border:none;
-            border-bottom:2px solid #FC4C01;
-        }
-        #para_hero{
-            font-family: sans-serif;
-        }
-        p{
-            font-family: 'Afacad', sans-serif;
-            font-size:18px;
-        }
-        .com_name{
-            font-family: "Cairo Play", monospace, 'Courier New';'
-        }
-        #image_pix{
-            display: flex;
-            align-items: center;
-            width: 100%;
-            justify-content: center;
-        }
-    </style>
-
-
-    <!-- Navbar start -->
-    <!-- component -->
-    <nav class="bg-white border-gray-200 py-1 dark:bg-gray-900 sticky top-0" style="z-index: 999;background:#e6e6e6">
-        <div class="flex flex-wrap items-center justify-between max-w-screen mx-auto" style="padding:0px 15px">
-            <a href="#" class="flex items-center">
-                <img src="https://FiNaLTY.in/static/images/logo1.png" style="height:80px; margin-right:-15px" class="h-6 mr-3 sm:h-9" alt="Landwind Logo">
-                <div>
-                    <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white com_name" style="font-size: 225%;">FiN<span id="main_name">a</span>LTY</span>
-                    <p style="font-size: 78%;color: #313131;">Wealth in Every Brick</p>
-                </div>
-            </a>
-            <button data-collapse-toggle="mobile-menu-2" type="button"
-            class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-            aria-controls="mobile-menu-2" aria-expanded="true">
-            <span class="sr-only">Open main menu</span>
-            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd"
-                    d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                    clip-rule="evenodd"></path>
-            </svg>
-            <svg class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd"
-                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                    clip-rule="evenodd"></path>
-            </svg>
-        </button>
-            <div class="items-center justify-between w-full lg:flex lg:w-auto lg:order-1 hidden" id="mobile-menu-2">
-                <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0" id="menu_control">
-                    <li>
-                        <a id="home_" onclick="scrollToSection('home')"
-                            class="block py-2 pl-3 pr-4 text-white orange rounded lg:bg-transparent lg:p-0 dark:text-white cursor-pointer" style="color:rgb(252, 76, 1)"
-                            aria-current="page">Home</a>
-                    </li>
-                    <li>
-                        <a data-offset="100" onclick="scrollToSection('about')"
-                            class=" cursor-pointer block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700" 
-                            id="about_">About</a>
-                    </li>
-                    <li>
-                        <a onclick="scrollToSection('service')"
-                            class=" cursor-pointer block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700" 
-                            id="service_">Services</a>
-                    </li>
-                    <li>
-                        <a onclick="scrollToSection('peoples')"
-                        class=" cursor-pointer block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
-                         id="peoples_">Key Peoples</a>
-                    </li>
-                    <li>
-                        <a onclick="scrollToSection('contact')"
-                        class=" cursor-pointer block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
-                         id="Contact_">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-  
-    <!-- Navbar End -->
-    <!-- Hero Start -->
-    <div id="home" class="container mx-auto sm:px-4 max-w-full mx-auto sm:px-4 bg-gray-100 py-6 mt-0" style="padding: 9% 0px;">
-        <div class="container mx-auto sm:px-4">
-            <div class="flex flex-wrap g-5 items-center flex-col-reverse sm:flex-col-reverse md:flex-col-reverse lg:flex-row sm:flex-row-reverse" id="hero" style="margin-top:-4%">
-                <div class="lg:w-3/5 pr-4 pl-4 md:w-full pr-2 pl-4 pt-4">
-                    {% comment %} <small class="inline-block fw-bold text-gray-900 uppercase bg-gray-100 border orange_border rounded-full py-2 px-4 px-4 py-1 mb-4 animated bounceInDown">Welcome to <span class="com_name">FiNaLTY</span></small> {% endcomment %}
-                    <h6 style="font-size:23px">Introducing <b>Finalty FinTech Private Limited</b></h6>
-                    <h1 class="display-5 mb-8 lg:text-5xl text-2xl sm:text-3xl sm:text-2xl" style="color:black">Welcome to <span class="com_name" >FiN<span id="main_name">a</span>LTY</span> - A Comprehensive Guide to Smart Tenant-Landlord Solutions</h1>
-                    <p class="text-xl font-light mb-4 " id="para_hero">Step into the world of <span class="com_name">FiN<span id="main_name">a</span>LTY</span>, your comprehensive guide to intelligent solutions for both tenants and landlords. Navigate the future of seamless property management with us!</p>
-                    <a data-offset="55" onclick="scrollToSection('contact')" class=" cursor-pointer inline-block align-middle mt-7 text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline orange_background text-white hover:orange_background border-0 rounded-full py-2 px-4 py-3 px-4 md:px-12 animated bounceInLeft">Know More</a>
-                </div>
-                <div class="lg:w-2/5 pr-4 pl-4 md:w-full pr-4 pl-4">
-                    <img style="width:100%" src="https://cdni.iconscout.com/illustration/premium/thumb/real-estate-3727515-3135817.png?f=webp" class="max-w-full h-auto rounded animated lightSpeedIn" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="about"></div>
-    <!-- Hero End -->
-    <hr>
-
-    <!-- About Satrt -->
-    <div class="text-center wow bounceInDown" data-wow-delay="0.1s" style="margin-top:5%">
-        {% comment %} <small class="inline-block fw-bold text-gray-900 uppercase orange_border py-2 px-4 px-4 py-1 mb-3" id="underLine">Values</small> {% endcomment %}
-        <h1 class="display-5 mb-5"><b id="titles">About</b></h1>
-    </div>
-    <div class="container mx-auto sm:px-4 max-w-full mx-auto sm:px-4 py-5 mt-8 lg:mt-10" style="padding: 1% 0%;">
-        <div class="container mx-auto sm:px-4">
-            <div class="flex flex-wrap g-5 items-center">
-                <div class="lg:w-2/5 pr-4 pl-4 wow bounceInLeft" data-wow-delay="0.1s">
-                    <img id="image_pix" src="https://media.licdn.com/dms/image/D4E12AQEOr0LTZEAH9w/article-cover_image-shrink_720_1280/0/1684331292817?e=2147483647&v=beta&t=_ALqnvf-b19VMrFBx8OtsAI06Be8B4Ps59IjdtH1bkE" class="max-w-full h-auto rounded" alt="">
-                </div>
-                <div class="lg:w-3/5 pr-4 pl-4 wow bounceInRight" style="padding-right: ;" data-wow-delay="0.3s">
-                    <small class="inline-block fw-bold text-gray-900 uppercase orange_border py-2 px-4 px-4 py-1 mb-3" id="underLine"> Seamless Communication</small>
-                    <h1 class="display-5 mb-4" id="heading_h1">Revolutionizing Tenant-Landlord Interactions</h1>
-                    <p class="mb-4" id="about_p">Unlock a groundbreaking feature within our app designed to foster direct and transparent communication between tenants and landlords. Imagine a seamless process where tenants and landlords can connect instantly, facilitating clear transactions and streamlining the search for the perfect match.</p>
-                    <div class="flex flex-wrap g-4 text-gray-900 mb-5 g-10px mb- mr-4">
-                        <div class="sm:w-1/2 pr-4 pl-4 font-bold" id="points">
-                            <i class="fas fa-paper-plane orange_color me-2" id="icon_arrow" ></i><div>Seamless Connection
-                        </div></div>
-                        <div class="sm:w-1/2 pr-4 pl-4 font-bold" id="points">
-                            <i class="fas fa-paper-plane orange_color me-2" id="icon_arrow" ></i><div>Clear Transactions
-                        </div></div>
-                        <div class="sm:w-1/2 pr-4 pl-4 font-bold" id="points">
-                            <i class="fas fa-paper-plane orange_color me-2" id="icon_arrow" ></i><div>Initiate Communication
-                        </div></div>
-                        <div class="sm:w-1/2 pr-4 pl-4 font-bold" id="points">
-                            <i class="fas fa-paper-plane orange_color me-2" id="icon_arrow" ></i><div>Efficient Matchmaking
-                        </div></div>
-                    </div>
-                    <p class="mb-4" id="about_p">But that's not all – our innovative platform goes beyond the basics. Picture a world where the tenant-landlord relationship is enriched through advanced features, such as personalized recommendations, real-time property insights, and a secure platform ensuring your peace of mind throughout the entire process.</p>
-                    <p class="mb-4" id="about_p">Experience the future of property renting with us – where convenience meets sophistication, and your dream living space is just a click away.</p>
-                </div>
-            </div>
-        </div>
-        
-    </div>
-    <!-- About End -->
-    <!-- 2. About Satrt -->
-    <div class="container mx-auto sm:px-4 max-w-full mx-auto sm:px-4 py-5 mt-8">
-        <div class="container mx-auto sm:px-4">
-            <div class="flex flex-wrap  g-5 items-center flex-row-reverse">
-                <div class="lg:w-2/5 pr-4 pl-4 wow bounceInRight" data-wow-delay="0.1s">
-                    <img id="image_pix" src="https://cdni.iconscout.com/illustration/premium/thumb/payment-processing-9773386-7973909.png?f=webp" class="max-w-full h-auto rounded" alt="">
-                </div>
-                <div class="lg:w-3/5 pr-4 pl-4 wow bounceInLeft" style="padding-right: ;" data-wow-delay="0.3s">
-                    <small class="inline-block fw-bold text-gray-900 uppercase orange_border py-2 px-4 px-4 py-1 mb-3" id="underLine">Hassle-Free Payment Process</small>
-                    <h1 class="display-5 mb-4" id="heading_h1">Automatic Rent Payments</h1>
-                    <p class="mb-4" id="about_p"> Bid farewell to the hassle of remembering rent deadlines. Our app
-                        ensures a seamless payment process by automatically transferring the respective
-                        rent amount to the landlord each month. Receive timely notifications to remind
-                        you about the upcoming rent payment, making the entire process stress-free.</p>
-                    <h1 class="display-5 mb-4" id="heading_h1">Payment Reminders with a Personal Touch</h1>
-                    <p class="mb-4" id="about_p"> Our app doesn't just remind you to pay rent; it delivers a personalized
-                        message on end of the month, gently reminding you to keep the necessary funds
-                        in your account. "You have to pay the rent, so keep the respective rent amount
-                        in your account balance" - ensuring a stress-free payment experience.</p>
-                    <div class="flex flex-wrap  g-4 text-gray-900 mb-5">
-                        <div class="sm:w-1/2 pr-4 pl-4 font-bold" id="points">
-                            <i class="fas fa-paper-plane orange_color me-2" id="icon_arrow" ></i><div>Automatic Rent Payments
-                        </div></div>
-                        <div class="sm:w-1/2 pr-4 pl-4 font-bold" id="points">
-                            <i class="fas fa-paper-plane orange_color me-2" id="icon_arrow" ></i><div>Personalized Payment Reminders
-                        </div></div>
-                        <div class="sm:w-1/2 pr-4 pl-4 font-bold" id="points">
-                            <i class="fas fa-paper-plane orange_color me-2" id="icon_arrow" ></i><div>Seamless Process Assurance
-                        </div></div>
-                        <div class="sm:w-1/2 pr-4 pl-4 font-bold" id="points">
-                            <i class="fas fa-paper-plane orange_color me-2" id="icon_arrow" ></i><div>Financial Responsibility Encouragement
-                        </div></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- About End -->
-    <!--3. About Satrt -->
-    <div class="container mx-auto sm:px-4 max-w-full mx-auto sm:px-4 py-5 mt-8 lg:mt-10" id="page">
-        <div class="container mx-auto sm:px-4">
-            <div class="flex flex-wrap g-5 items-center">
-                <div class="lg:w-2/5 pr-4 pl-4 wow bounceInLeft" data-wow-delay="0.1s">
-                    <img id="image_pix" src="https://cdni.iconscout.com/illustration/premium/thumb/judicial-penalty-9522747-7740759.png?f=webp" class="max-w-full h-auto rounded" alt="">
-                </div>
-                <div class="lg:w-3/5 pr-4 pl-4 wow bounceInRight" style="padding-right:;" data-wow-delay="0.3s">
-                    <small class="inline-block fw-bold text-gray-900 uppercase orange_border py-2 px-4 px-4 py-1 mb-3" id="underLine">Intervention and Penalties</small>
-                    <h1 class="display-5 mb-4" id="heading_h1">Elevating Financial Responsibility with Our Safety Net</h1>
-                    <p class="mb-4" id="about_p">In a commitment to our users' financial well-being, our company takes proactive steps to safeguard against missed payments. Imagine a world where missed rent payments don't lead to stress and uncertainty.</p>
-                    <p class="mb-4" id="about_p">Our innovative approach involves stepping in to cover the rent on behalf of the tenant, providing a robust safety net that ensures continuous peace of mind. As a testament to fostering financial responsibility, a nominal fee accompanies delayed payments, instilling a sense of accountability within our vibrant community.</p>
-                    <div class="flex flex-wrap g-4 text-gray-900 mb-5">
-                        <div class="sm:w-1/2 pr-4 pl-4 font-bold" id="points">
-                            <i class="fas fa-paper-plane orange_color me-2" id="icon_arrow" ></i><div>Prompt Response to Missed Payments
-                        </div></div>
-                        <div class="sm:w-1/2 pr-4 pl-4 font-bold" id="points">
-                            <i class="fas fa-paper-plane orange_color me-2" id="icon_arrow" ></i><div>Financial Safety Net
-                        </div></div>
-                        <div class="sm:w-1/2 pr-4 pl-4 font-bold" id="points">
-                            <i class="fas fa-paper-plane orange_color me-2" id="icon_arrow" ></i><div>Nominal Fee for Accountability
-                        </div></div>
-                        <div class="sm:w-1/2 pr-4 pl-4 font-bold" id="points">
-                            <i class="fas fa-paper-plane orange_color me-2" id="icon_arrow" ></i><div>Community Financial Health
-                        </div></div>
-                    </div>
-                    <p class="mb-4" id="about_p">Picture a community where financial well-being is elevated, and missed payments are transformed into opportunities for growth. Join us in reshaping the landscape of responsible living!</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <!-- About End -->
-    <!-- 4. About Satrt -->
-    <div class="container mx-auto sm:px-4 max-w-full mx-auto sm:px-4 py-5 mt-8 lg:mt-10" id="page">
-        <div class="container mx-auto sm:px-4">
-            <div class="flex flex-wrap g-5 items-center flex-row-reverse">
-                <div class="lg:w-2/5 pr-4 pl-4 wow bounceInRight" data-wow-delay="0.1s">
-                    <img id="image_pix" src="https://cdni.iconscout.com/illustration/premium/thumb/protection-of-property-interests-7718371-6253674.png?f=webp" class="max-w-full h-auto rounded" alt="">
-                </div>
-                <div class="lg:w-3/5 pr-4 pl-4 wow bounceInLeft" style="padding-right:;" data-wow-delay="0.3s">
-                    <small class="inline-block fw-bold text-gray-900 uppercase orange_border py-2 px-4 px-4 py-1 mb-3" id="underLine">Damage Reporting and Legal Action</small>
-                    <h1 class="display-5 mb-4" id="heading_h1">Fortifying Property Interests with Vigilance</h1>
-                    <p class="mb-4" id="about_p">Our commitment to safeguarding property interests goes beyond conventional property management. In the unfortunate event of tenant-caused damage, our company stands as your vigilant guardian. Landlords can seamlessly request our intervention, unleashing a powerful shield against property threats.</p>
-                    <p class="mb-4" id="about_p">We take pride in offering a swift and effective solution. Our dedicated team is ready to take legal action and, if necessary, initiate a formal complaint process with local law enforcement. The power lies in the hands of the landlord, ensuring a fair and balanced approach to issue resolution.</p>
-                    <div class="flex flex-wrap g-4 text-gray-900 mb-5">
-                        <div class="sm:w-1/2 pr-4 pl-4 font-bold" id="points">
-                            <i class="fas fa-paper-plane orange_color me-2" id="icon_arrow" ></i><div>Property Damage Reporting
-                        </div></div>
-                        <div class="sm:w-1/2 pr-4 pl-4 font-bold" id="points">
-                            <i class="fas fa-paper-plane orange_color me-2" id="icon_arrow" ></i><div>Legal Action Assurance
-                        </div></div>
-                        <div class="sm:w-1/2 pr-4 pl-4 font-bold" id="points">
-                            <i class="fas fa-paper-plane orange_color me-2" id="icon_arrow" ></i><div>Formal Complaint Process
-                        </div></div>
-                        <div class="sm:w-1/2 pr-4 pl-4 font-bold" id="points">
-                            <i class="fas fa-paper-plane orange_color me-2" id="icon_arrow" ></i><div>Efficient Issue Resolution
-                        </div></div>
-                    </div>
-                    <p class="mb-4" id="about_p">Join us in fortifying your property interests with a proactive and vigilant approach. Experience the peace of mind that comes with knowing your assets are protected by a dedicated team committed to efficient issue resolution.</p>
-                </div>
-            </div>
-        </div>
-    </div>    
-
-    <!-- About End -->
-    <!--5. About Satrt -->
-    <div class="container mx-auto sm:px-4 max-w-full mx-auto sm:px-4 py-5 mt-8 lg:mt-10" id="page">
-        <div class="container mx-auto sm:px-4">
-            <div class="flex flex-wrap g-5 items-center">
-                <div class="lg:w-2/5 pr-4 pl-4 wow bounceInLeft" data-wow-delay="0.1s">
-                    <img id="image_pix" src="https://static.vecteezy.com/system/resources/thumbnails/019/522/844/small_2x/benchmarking-concept-set-idea-of-business-development-and-improvement-compare-quality-with-competitor-companies-free-vector.jpg" class="max-w-full h-auto rounded" alt="">
-                </div>
-                <div class="lg:w-3/5 pr-4 pl-4 wow bounceInRight" style="padding-right:;" data-wow-delay="0.3s">
-                    <small class="inline-block fw-bold text-gray-900 uppercase orange_border py-2 px-4 px-4 py-1 mb-3" id="underLine">Financial History Transparency</small>
-                    <h1 class="display-5 mb-4" id="heading_h1">Elevate Your Property Management Experience</h1>
-                    <p class="mb-4" id="about_p">Welcome to a new era of property management, where financial accountability meets technological innovation. Our app empowers landlords with an unparalleled level of transparency into a tenant's financial history, going beyond the conventional rental experience.</p>
-                    <p class="mb-4" id="about_p">Imagine having real-time access to comprehensive records, including water tax, current bills, and detailed payment history. This groundbreaking feature enables landlords to make informed decisions, ensuring the selection of trustworthy and responsible tenants who align with your property's values.</p>
-                    <div class="flex flex-wrap g-4 text-gray-900 mb-5">
-                        <div class="sm:w-1/2 pr-4 pl-4 font-bold" id="points">
-                            <i class="fas fa-paper-plane orange_color me-2" id="icon_arrow" ></i><div>Transparent Financial Records
-                        </div></div>
-                        <div class="sm:w-1/2 pr-4 pl-4 font-bold" id="points">
-                            <i class="fas fa-paper-plane orange_color me-2" id="icon_arrow" ></i><div>Empowering Informed Decisions
-                        </div></div>
-                        <div class="sm:w-1/2 pr-4 pl-4 font-bold" id="points">
-                            <i class="fas fa-paper-plane orange_color me-2" id="icon_arrow" ></i><div>Comprehensive Payment Records
-                        </div></div>
-                        <div class="sm:w-1/2 pr-4 pl-4 font-bold" id="points">
-                            <i class="fas fa-paper-plane orange_color me-2" id="icon_arrow" ></i><div>Trustworthy and Responsible Tenant Selection
-                        </div></div>
-                    </div>
-                    <p class="mb-4" id="about_p">Join us in revolutionizing property management – where transparency meets efficiency, and informed decisions lead to unparalleled tenant-landlord relationships. Elevate your property management experience with our cutting-edge platform today!</p>
-                </div>
-            </div>
-        </div>
-    </div>    
-    <!-- About End -->
-    <!-- 6. About Satrt -->
-    <div class="container mx-auto sm:px-4 max-w-full mx-auto sm:px-4 py-5 mt-8 lg:mt-10" id="page">
-        <div class="container mx-auto sm:px-4">
-            <div class="flex flex-wrap g-5 items-center flex-row-reverse">
-                <div class="lg:w-2/5 pr-4 pl-4 wow bounceInRight" data-wow-delay="0.1s">
-                <img sty id="image_pix"le="height: 256px;" src="data:image/png;base64,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" class="max-w-full h-auto rounded" alt="">
-            </div>
-            <div class="lg:w-3/5 pr-4 pl-4 wow bounceInLeft" style="padding-right:;" data-wow-delay="0.3s">
-                <small class="inline-block fw-bold text-gray-900 uppercase orange_border py-2 px-4 px-4 py-1 mb-3" id="underLine">Tenant Behaviour Profile</small>
-                <h1 class="display-5 mb-4" id="heading_h1">Empowering Informed Decision-Making</h1>
-                <p class="mb-4" id="about_p">Unlock the power of comprehensive tenant insights with our Tenant Behaviour Profile. It goes beyond the conventional approach, delving into tenant behavior, rent payment history, and current bill payment records. This detailed profile within the app enables informed decision-making for both tenants and landlords.</p>
-                <div class="flex flex-wrap g-4 text-gray-900 mb-5">
-                    <div class="sm:w-1/2 pr-4 pl-4 font-bold" id="points">
-                        <i class="fas fa-paper-plane orange_color me-2" id="icon_arrow" ></i><div>Curated Tenant Behavior Profile
-                    </div></div>
-                    <div class="sm:w-1/2 pr-4 pl-4 font-bold" id="points">
-                        <i class="fas fa-paper-plane orange_color me-2" id="icon_arrow" ></i><div>Positive Impact of Timely Payments
-                    </div></div>
-                    <div class="sm:w-1/2 pr-4 pl-4 font-bold" id="points">
-                        <i class="fas fa-paper-plane orange_color me-2" id="icon_arrow" ></i><div>Swift Legal Actions for Persistent Missed Payments
-                    </div></div>
-                    <div class="sm:w-1/2 pr-4 pl-4 font-bold" id="points">
-                        <i class="fas fa-paper-plane orange_color me-2" id="icon_arrow" ></i><div>Landlords' Profiles Documenting and Resolving Issues
-                    </div></div>
-                </div>
-                <p class="mb-4" id="about_p">Timely payments not only positively influence the tenant's profile, fostering a sense of accountability, but also contribute to a responsible housing community. In cases where tenants consistently miss payments or disregard check-out directives, our company is committed to taking swift legal action for resolution. Similarly, landlords' profiles meticulously note any issues or misbehavior, prompting our proactive intervention to maintain a harmonious and responsible housing community.</p>
-            </div>
-        </div>
-    </div>
-</div>
-    <!-- About End -->
-    <!--7. About Satrt -->
-    <div class="container mx-auto sm:px-4 max-w-full mx-auto sm:px-4 py-5 mt-8 lg:mt-10" id="page">
-        <div class="container mx-auto sm:px-4">
-            <div class="flex flex-wrap  g-5 items-center">
-                <div class="lg:w-2/5 pr-4 pl-4 wow bounceInLeft" data-wow-delay="0.1s">
-                    <img id="image_pix" style="height:253px" src="https://assets-global.website-files.com/637ac7502ecc7e25ee8a2510/63a0d039bb01a997b85f0263_Frame-2-min.svg" class="max-w-full h-auto rounded" alt="">
-                </div>
-                <div class="lg:w-3/5 pr-4 pl-4 wow bounceInRight" style="padding-right: ;" data-wow-delay="0.3s">
-                    <small class="inline-block fw-bold text-gray-900 uppercase orange_border py-2 px-4 px-4 py-1 mb-3" id="underLine">Exclusive Offer: Free Usage for Tenants</small>
-                    <h1 class="display-5 mb-4" id="heading_h1">Empowering Tenants with Unmatched Benefits</h1>
-                    <p class="mb-4" id="about_p">Embark on a revolutionary tenant experience where access to premium features comes at no cost. Our commitment to fairness ensures that tenants can explore the app's extensive benefits without incurring any direct expenses. The platform's unparalleled accessibility and user-friendly design foster a seamless tenant-landlord relationship, elevating your renting experience to new heights.</p>
-                    <div class="flex flex-wrap  g-4 text-gray-900 mb-5">
-                        <div class="sm:w-1/2 pr-4 pl-4 font-bold" id="points">
-                            <i class="fas fa-paper-plane orange_color me-2" id="icon_arrow" ></i><div>Unrestricted Access to Exclusive App Benefits
-                        </div></div>
-                        <div class="sm:w-1/2 pr-4 pl-4 font-bold" id="points">
-                            <i class="fas fa-paper-plane orange_color me-2" id="icon_arrow" ></i><div>Tenant-Centric Approach for Unmatched Convenience
-                        </div></div>
-                        <div class="sm:w-1/2 pr-4 pl-4 font-bold" id="points">
-                            <i class="fas fa-paper-plane orange_color me-2" id="icon_arrow" ></i><div>Zero Direct Costs for Tenants - A Truly Free Experience
-                        </div></div>
-                        <div class="sm:w-1/2 pr-4 pl-4 font-bold" id="points">
-                            <i class="fas fa-paper-plane orange_color me-2" id="icon_arrow" ></i><div>Fostered Tenant-Landlord Relations for an Unmatched Experience
-                        </div></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <!-- About End -->
-    <!-- 8. About Start -->
-<div class="container mx-auto sm:px-4 max-w-full mx-auto sm:px-4 py-5 mt-8 lg:mt-10" style="5% 0% 1% 0%">
-    <div class="container mx-auto sm:px-4">
-        <div class="flex flex-wrap  g-5 items-center flex-row-reverse">
-            <div class="lg:w-2/5 pr-4 pl-4 wow bounceInRight" data-wow-delay="0.1s">
-                <img id="image_pix" src="https://www.achintya.co.in/App_Themes/images/Demat_account-img.svg" class="max-w-full h-auto rounded" alt="">
-            </div>
-            <div class="lg:w-3/5 pr-4 pl-4 wow bounceInLeft" style="padding-right: ;" data-wow-delay="0.3s">
-                <h1 class="display-5 mb-4" id="heading_h1">Effortless Formalities Redefined</h1>
-                <p class="mb-4" id="about_p">
-                    Embark on a journey where post-matching formalities transcend the ordinary. Within our groundbreaking app, you not only discover your ideal match but also revolutionize the way you navigate through formalities. It's all seamless, efficient, and completely at your fingertips. Effortlessly maneuver through post-matching processes, transforming intricate tasks into a walk in the park. Encounter a paradigm shift in agreement handling - sign with utmost simplicity, speed, and ease. Experience substantial time and paperwork savings, enabling you to concentrate on what truly matters. The submission of government proofs has never been more polished; our app simplifies complexity effortlessly.</p>
-                <div class="flex flex-wrap  g-4 text-gray-900 mb-5">
-                    <div class="sm:w-1/2 pr-4 pl-4 font-bold" id="points">
-                        <i class="fas fa-paper-plane orange_color me-2" id="icon_arrow"></i> Effortless Post-Matching Formalities
-                    </div>
-                    <div class="sm:w-1/2 pr-4 pl-4 font-bold" id="points">
-                        <i class="fas fa-paper-plane orange_color me-2" id="icon_arrow"></i> Streamlined Agreement Signing
-                    </div>
-                    <div class="sm:w-1/2 pr-4 pl-4 font-bold" id="points">
-                        <i class="fas fa-paper-plane orange_color me-2" id="icon_arrow"></i> Government Proof Submission Made Easy
-                    </div>
-                    <div class="sm:w-1/2 pr-4 pl-4 font-bold" id="points">
-                        <i class="fas fa-paper-plane orange_color me-2" id="icon_arrow"></i> Time and Paperwork Savings
-                        <div id="service_s"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-    <!-- About End -->
-    <!--9. About Satrt -->
-    <div class="text-center wow bounceInDown" data-wow-delay="0.1s" style="margin-top:5%" id="Our_Services">
-        {% comment %} <small class="inline-block fw-bold text-gray-900 uppercase orange_border py-2 px-4 px-4 py-1 mb-3" id="underLine">Values</small> {% endcomment %}
-        <h1 class="display-5 mb-5"><b id="titles">Our Services</b></h1>
-    </div>
-    
-    <!-- About End -->
-    <!-- 10. About Satrt -->
-    <div class="container mx-auto sm:px-4 max-w-full mx-auto sm:px-4 py-5 mt-8 lg:mt-10" style="padding: 1% 0% 4% 0%;">
-        <div class="container mx-auto sm:px-4">
-            <div class="flex flex-wrap g-5 items-center flex-row-reverse">
-                <div class="lg:w-2/5 pr-4 pl-4 wow bounceInRight" data-wow-delay="0.1s">
-                    <img id="image_pix" src="https://s9financialplanners.com/assets/img/NRI.png" class="max-w-full h-auto rounded" alt="Non-Resident Indian">
-                </div>
-                <div class="lg:w-3/5 pr-4 pl-4 wow bounceInLeft" style="padding-right: ;" data-wow-delay="0.3s">
-                    <h1 class="display-5 mb-4" id="heading_h1">Seamless NRI Property Investment</h1>
-                    <p class="mb-4" id="about_p">
-                        Considering an investment in Indian land? Our NRI-centric solutions expertly handle property management, addressing everything from taxes to repairs for a hassle-free ownership experience. Take into account maintenance costs, but rest assured with our dependable services that allow you to enjoy all the benefits worry-free. Our specialized property management guarantees a smooth process in overseeing your real estate assets. Reap the full spectrum of advantages associated with investing in Indian land without the stress. Managing property from abroad becomes effortless with our comprehensive solutions. When contemplating an investment, factor in maintenance costs and experience a seamless journey overseeing your real estate assets with our specialized property management services.</p>
-                        <div class="flex flex-wrap  g-4 text-gray-900 mb-5">
-                            <div class="sm:w-1/2 pr-4 pl-4 font-bold" id="points">
-                                <i class="fas fa-paper-plane orange_color me-2" id="icon_arrow"></i> Comprehensive NRI-Focused Solutions
-                            </div>
-                            <div class="sm:w-1/2 pr-4 pl-4 font-bold" id="points">
-                                <i class="fas fa-paper-plane orange_color me-2" id="icon_arrow"></i> Worry-Free Benefits
-                            </div>
-                            <div class="sm:w-1/2 pr-4 pl-4 font-bold" id="points">
-                                <i class="fas fa-paper-plane orange_color me-2" id="icon_arrow"></i>Mindful Maintenance Planning
-                            </div>
-                            <div class="sm:w-1/2 pr-4 pl-4 font-bold" id="points">
-                                <i class="fas fa-paper-plane orange_color me-2" id="icon_arrow"></i> Seamless Oversight with Expert Management
-                                <div id="service_s"></div>
-                            </div>
-                        </div>
-        
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <!-- About End -->
-    <!--11. About Satrt -->
-    <div class="container mx-auto sm:px-4 max-w-full mx-auto sm:px-4 py-5 mt-8 lg:mt-10" id="page">
-        <div class="container mx-auto sm:px-4">
-            <div class="flex flex-wrap g-5 items-center">
-                <div class="lg:w-2/5 pr-4 pl-4 wow bounceInLeft" data-wow-delay="0.1s">
-                    <img id="image_pix" src="https://static.semrush.com/blog/uploads/media/0a/8e/0a8e35cd45a0a4bb7046be4f1a08064d/b81f510b65570232ddf58b2fa5dbff8b/chatgpt-prompts.svg" class="max-w-full h-auto rounded" alt="Prompt Issue Resolution">
-                </div>
-                <div class="lg:w-3/5 pr-4 pl-4 wow bounceInRight" style="padding-right:;" data-wow-delay="0.3s">
-                    <h1 class="display-5 mb-4" id="heading_h1">Resolve Issues Promptly for a Seamless Living Experience</h1>
-                    <p class="mb-4" id="about_p">
-                        
-                        In our company, we recognize the significance of a comfortable living environment. This is why we prioritize prompt responses to tenant concerns, tackling issues like water leaks, carpentry needs, or electrical malfunctions as soon as they surface. Our dedication extends beyond mere troubleshooting; it's about cultivating positive relationships and establishing trust through swift and effective issue resolution. We take immediate steps to handle tenant issues, ensuring a seamless living experience. Our team is well-equipped to address a diverse range of concerns, offering comprehensive solutions. Our goal is to create a living space where tenants feel at ease and secure. Through our quick issue resolution, we aim to nurture positive relationships with our tenants.</p>
-                    
-                    <div class="flex flex-wrap  g-4 text-gray-900 mb-5">
-                            <div class="sm:w-1/2 pr-4 pl-4 font-bold" id="points">
-                                <i class="fas fa-paper-plane orange_color me-2" id="icon_arrow"></i> Swift Issue Resolution
-                            </div>
-                            <div class="sm:w-1/2 pr-4 pl-4 font-bold" id="points">
-                                <i class="fas fa-paper-plane orange_color me-2" id="icon_arrow"></i> Comprehensive Problem Solving
-                            </div>
-                            <div class="sm:w-1/2 pr-4 pl-4 font-bold" id="points">
-                                <i class="fas fa-paper-plane orange_color me-2" id="icon_arrow"></i>Comfortable Living Environment
-                            </div>
-                            <div class="sm:w-1/2 pr-4 pl-4 font-bold" id="points">
-                                <i class="fas fa-paper-plane orange_color me-2" id="icon_arrow"></i>Comfortable Living Environment
-                                <div id="service_s"></div>
-                            </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <!-- About End -->
-    <!-- 12. About Satrt -->
-    <div class="container mx-auto sm:px-4 max-w-full mx-auto sm:px-4 py-5 mt-8 lg:mt-10" id="page">
-        <div class="container mx-auto sm:px-4">
-            <div class="flex flex-wrap g-5 items-center flex-row-reverse">
-                <div class="lg:w-2/5 pr-4 pl-4 wow bounceInRight" data-wow-delay="0.1s">
-                    <img id="image_pix" src="https://www.cflowapps.com/wp-content/uploads/2023/02/invoiic_automtn.jpg" class="max-w-full h-auto rounded" alt="Receipt Values">
-                </div>
-                <div class="lg:w-3/5 pr-4 pl-4 wow bounceInLeft" style="padding-right:;" data-wow-delay="0.3s">
-                    <h1 class="display-5 mb-4" id="heading_h1">Elevating the Significance of Receipts</h1>
-                    <ul>
-                        <li>
-                            <p class="mb-4" id="about_p">Our company understands that the receipts tenants receive are more than just transactions—they embody significant value. These receipts not only reflect financial transactions but also grant authority and trust to tenants.</p>
-                        </li>
-                    </ul>
-                    <div class="flex flex-wrap  g-4 text-gray-900 mb-5">
-                        <div class="sm:w-1/2 pr-4 pl-4 font-bold" id="points">
-                            <i class="fas fa-paper-plane orange_color me-2" id="icon_arrow"></i>Embodied Value in Receipts
-                        </div>
-                        <div class="sm:w-1/2 pr-4 pl-4 font-bold" id="points">
-                            <i class="fas fa-paper-plane orange_color me-2" id="icon_arrow"></i> Authority Granted Based on Receipts
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <!-- About End -->
-    <!--13. About Satrt -->
-    {% comment %} <div class="container mx-auto sm:px-4 max-w-full mx-auto sm:px-4 py-5 mt-8 lg:mt-10" id="page">
-        <div class="container mx-auto sm:px-4">
-            <div class="flex flex-wrap  g-5 items-center">
-                <div class="lg:w-2/5 pr-4 pl-4 wow bounceInLeft" data-wow-delay="0.1s">
-                    <img id="image_pix" src="data:image/png;base64,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" class="max-w-full h-auto rounded" alt="">
-                </div>
-                <div class="lg:w-3/5 pr-4 pl-4 wow bounceInRight" style="padding-right: ;" data-wow-delay="0.3s">
-                    <h1 class="display-5 mb-4" id="heading_h1">Fintech Real Estate</h1>
-                    <p class="mb-4" id="about_p">
-                        FiNaLTY Fintech Private Limited is not just a company; it's a commitment to transforming the real estate landscape with Fintech. Join us in creating a future where landlord-tenant transactions are characterized by transparency, efficiency, and financial empowerment.
-                    </p>
-                    <div class="flex flex-wrap  g-4 text-gray-900 mb-5">
-                        <div class="sm:w-1/2 pr-4 pl-4 font-bold" id="points">
-                            <i class="fas fa-paper-plane orange_color me-2" id="icon_arrow"></i>Transparency in Transactions
-                        </div>
-                        <div class="sm:w-1/2 pr-4 pl-4 font-bold" id="points">
-                            <i class="fas fa-paper-plane orange_color me-2" id="icon_arrow"></i>Efficiency through Technology
-                        </div>
-                        <div class="sm:w-1/2 pr-4 pl-4 font-bold" id="points">
-                            <i class="fas fa-paper-plane orange_color me-2" id="icon_arrow"></i>Financial Empowerment for All
-                        </div>
-                        <div class="sm:w-1/2 pr-4 pl-4 font-bold" id="points">
-                            <i class="fas fa-paper-plane orange_color me-2" id="icon_arrow"></i>Future-Forward Vision
-                        </div>
-                    </div>
-                    <p class="text-gray-700 mb-4">
-                        At FiNaLTY Fintech, we believe in redefining the dynamics of real estate transactions. Our commitment goes beyond just being a company; it's a vision to pioneer a revolutionary change in the real estate landscape through the power of fintech solutions.
-                    </p>
-                    <p class="text-gray-700 mb-4">
-                        Imagine a world where every interaction between landlords and tenants is marked by absolute transparency, empowered by cutting-edge technology, and designed to bring financial empowerment to all stakeholders.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div> {% endcomment %}
-
-      <!-- About End -->
-    <!--17. About Satrt -->
-    <div class="container mx-auto sm:px-4 max-w-full mx-auto sm:px-4 py-5 mt-8 lg:mt-10" id="page">
-        <div class="container mx-auto sm:px-4">
-            <div class="flex flex-wrap g-5 items-center">
-                <div class="lg:w-2/5 pr-4 pl-4 wow bounceInLeft" data-wow-delay="0.1s">
-                    <img id="image_pix" src="https://www.payrent.com/wp-content/uploads/2021/11/pricing.svg" class="max-w-full h-auto rounded" alt="Rent Payment Solutions">
-                </div>
-                <div class="lg:w-3/5 pr-4 pl-4 wow bounceInRight" style="padding-right: ;" data-wow-delay="0.3s">
-                    <h1 class="display-5 mb-4" id="heading_h1">Revolutionizing Rent Payments</h1>
-                    <p class="mb-4" id="about_p">
-                        In the dynamic landscape of real estate, the challenge of on-time rent payments resonates as a common struggle for both landlords and tenants. In our quest for impactful solutions, we've gone beyond the surface, delving into the very fabric of this challenge to craft a revolutionary approach that transforms the rent payment experience for everyone involved.
-                    </p>
-                    <div class="flex flex-wrap g-4 text-gray-900 mb-5">
-                        <div class="sm:w-1/2 pr-4 pl-4 font-bold" id="points">
-                            <i class="fas fa-paper-plane orange_color me-2" id="icon_arrow"></i>Unveiling Market Insights
-                        </div>
-                        <div class="sm:w-1/2 pr-4 pl-4 font-bold" id="points">
-                            <i class="fas fa-paper-plane orange_color me-2" id="icon_arrow"></i>Founders' Vision for Transformation
-                        </div>
-                        <div class="sm:w-1/2 pr-4 pl-4 font-bold" id="points">
-                            <i class="fas fa-paper-plane orange_color me-2" id="icon_arrow"></i>Identifying and Bridging a Common Gap
-                        </div>
-                        <div class="sm:w-1/2 pr-4 pl-4 font-bold" id="points">
-                            <i class="fas fa-paper-plane orange_color me-2" id="icon_arrow"></i>A Journey Towards Positive Change
-                        </div>
-                        <div class="sm:w-full pr-4 pl-4 font-bold" id="points">
-                            <i class="fas fa-paper-plane orange_color me-2" id="icon_arrow"></i>Empowering Landlords and Tenants Alike
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    
-    <!-- About End -->
-    <!-- 14. About Satrt -->
-    <div class="container mx-auto sm:px-4 max-w-full mx-auto sm:px-4 py-5 mt-8 lg:mt-10" id="page">
-        <div class="container mx-auto sm:px-4">
-            <div class="flex flex-wrap g-5 items-center flex-row-reverse">
-                <div class="lg:w-2/5 pr-4 pl-4 wow bounceInRight" data-wow-delay="0.1s">
-                    <img id="image_pix" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAADNCAMAAAC8cX2UAAABYlBMVEX////y8vI+fP++0/8vLkE/PVb4+Pj19fX/uLjd6P/G1v+70f8zd//69+/Y2Nvw8PClpK3M2PM/O1A/OEY+c+g/U5Ozsrp/pf++vsVGg/7q6utVif6Xs/jIx8wPav86ev/n6/Ffjf2Kq/n2+f8vdf89bNk+YLgyQXPj7P/v9P8uLUHT4f/K2//z9/8/f///tbUfHjUXITinw/8cGjMPDSsjJzyfnqnJlJkuKC7U1Ng2M0+DgpEkcP9olv9znv9JSVj329tzcn2ddn6RkJ1LSWBpZ3pWVWkuLEo+WKP/wcBYV2UFACiGqfwKHDWIZ3GzweZtWGN2W2euq6zpqqz41tZdS1lVedNzfqlheLmLlLd9lc6mrsf/7u4/NDb/zs7u0NIlIkSAl9c+Rm9oiuDT1uRXX5amm+GosvJ4i+7JqdPrscDLw+PQmZ2bdX1ScL2Gho8AAB0UJloxQ3s0TpIuJSM5ZcgFvWbLAAAVvElEQVR4nO2di3fbyHWHSVACRIIvyVqKz4AUIBskQVqmRNqkHl5ZlmR5FXdrr9vuxtmk3jRN07Tb7tb/f2fwnBkMBgMQIOUc/05OljIBAh/unTt37gyATOZeSsxakvi2Eld0Wikrm+XClji3+0yU9cS73d+BvUUEh2VGiXO7z0QoNmi3QUKpQ9yCfhhbSWyVhDBsXsU/CHu71fnTSrC9PZmGRM4lbe5VYCMthIkjxT9EVK0CG92VwY3Fj5Tb96qxefUFOw19wf6C/QX7C/YX7Ej6gv0F+wv254Vd7tTqc45jfD7YkiSKkiTRv4TYzdrF8fHR0dHxNxfNVWHnzhuWmEcbKtZGZ+1RVGyxXK9Wq/U5DVwqi5XOxcbhdMPS4WF9Ndh7WlERgBSNebSCJgjWZmf9SNhSs1otN5vN8rxa9nM3X79+fjgdbLgaHNY4sCVuBWC3bRxB0AzW0faL7nZ7UbCl5qwsdrfzXUmsVDskd+X5xnSAQJvcbHubP1qr86pJx1YcGkFpMdzXENwNFUWPgJ2tNuUzTTsV9rZLYo3glmo7OLPJPS2HYl9VyzwCMcP0MB+27hoR8DQmebqGbe/qCEKxwI8tVpt3p3BnpXiak6RZE8euH1ugv8X8fMCKvOaOtXmNw8FFYG06dh7BBqemBKgYF7tSdVuHUiyAdo6bu3I0GEyfPHjx7vbN1OM+qoZhV8V5tUJxLcKXOiIPNqciYEv1f0BaR68rzQgvr27sfPt0C+g9au6NUGxJKs/CuKug71gT9ts75ABaQaySG5TLt5D63QO0kX/D6L1tbBArLytBqQD84coMEK8JO/u2ge7YLtXK5Ol92DL1j0+Q5n3MSNccbAB22QzkBhcFfrk2a6O/X9wr1ZrkFl8/NrFv3z3dgNxTSH/MiOUuNvzPPCgvLM/MS7ImbPFtAwmGwNpV0j7SdxY2BAfUT968eD/dOAqmxrCzIGjRqatWA1iXtef/hOyoFSQ/9tcO9tbt++n0KaCfTi94sbO1Oi1FmjshZF1tW/xnbz+l1Z378rTsBxd768Vvv72F0e24w40t1eu+X5Q6NXe1xJqwUXNrcmVG6dlvtzzud2ZfxjI2gZ0VOzWCW6y51GvDBidhcyunk+yMDGjwzH70zG3DVyJge+3YOWAVae9rw86K9X9pwUTvLN+hdjiSSFBv3bKofdiQG/1dbJy3Pmw4Bvv+hx9+N5t16OlF5gNpbmYxxIcND+BwIx/DsHcjahwRG9gTDIbm5WxAbpHJfE1wf4iG7cGS1MHYysHvH0TS7x8qEbHtqkDAd7Co9OH2MUL++OuI2OAAYFBPoWZhP9gM0IL6rzsxsJky9/zw45YL/vjHyNhmIBPnZMYfC/tkhdiQ3DN4dGzYgc9rvt+Ogb24KL9cD/ZjVuMOwM6Ks0tK2sCLDUivrq2PN2Uad3rYXuv+Q3RsqbaUtV9ebm7WXprNenGZmd+sDrv6N4f66SbHeBsXbNtk4hIFe/OqvrnZvDa5r8TMpS+upYQtndws3pi56e3TxeI6mJuKLcGawlKRfHGSvboSr6CZXzYz4oqw67DfWGy+2LoF1PAwgaMRCnasfpsMaYtZ5vIkM4Pc4Jr7zJ0Gtn5hH2Xx/s23zlkElKX92FiWhs9BRInki1qmA/73cgGsnZmnjS32c+fCqx3n5wcD5ywavXaeB5vMyec8OTmtA7vpZCqVTPPiGgyFmmQwTxRbkvR2SwPjgq92fGchKEXhvKCGYUtEkiLWeEZg1H57YZXwzP+/ThobyVOl7T1FM6tO448294Zt7Z2PYzgBc9qS2diU8XadY7xNT1cWXkRJGluSJ+2u9bFyd+rOO+w6P7/jHGZsD9PP8EaOY9OqK2KnGlpdwbFfXtkd9cKZd6xEd3L2DE3pTDvNw+luUdzTvNHsmLz8B843ioI1cRybWkPkqKXh2ItqdfMGBrHFH+0Jmehtu1KrsvS2Jyi/g5u8/Vd0hkkYf0JPZOej940ioA0cww6unDbZlVPCyRf1Zu3k+vr6quYkDNUFD3YTsXaTqdKZUtyGH/5EVC/Gr3bQo4y9bzT0gAh2hTZjbnE3Q+rkZNu+Ad4NXNDbgvRyKnb5EsFmq3SuaHlwLqU7X2EHCecfd9Fyzj4Ne6lZEV9Iu8GWj4Au7GQRii2diPzYZya2pJ/6qlVuON/ceYUYW1DQ9SUONgALqteY3FnmHBglS7u5tOdimtXFzeZ8Fo59Ytc6+bBPf7MNTqhNqeLtugfZxf79FFk3YmOD5ht2pBpjxpPWgS02r0/qneqVORC7vgp1cucy8fXb+e3tCmiXZ4ofWzjYoRgbVthJbNBdhx6INb8dUGZY3NwseItKNXeRDV+WZqYr3QaFWhg/NM/mAW5soXhHYNc69eVWMzCKSnT5sOcz92OE5LRLM7Ydzne+wo0tKD2vCzMvHOfalXLQ2hWIvRNJDwjs5on3Gb33qlRiBByArVGxBeGXHZ+xgZd7jdv8ce6FSnVzyQOlTr77VUR9wrDFE6SzQ8YAk17PYHF3/YHc1scHRMuG2DncyTk83FY2ADvo6MHCpgdO0O7OTk5FUSzta6eFwJs8gXTX2qS3735EqO0vkZ6bvx15Shx7hi238JLTtz8pyg+sHPV7etuG8tka0J/fK+w6vlIStXZRY1o7H9S2qVJabuO+B9h2TkpgQ5nYrCRqOxq24I4+14+NBnEftqblksMWtOG9wRZPyJX/CHa7MU7Q2oI2uTfYl75lVEi/3e12WasEEezg2IYe0w3l68au+kvZ/FmaZESzthfK14zdmZG/FQm7EBG7h2EHP/eB+hiI5LDLZDgLxa5UEK9HsLmcXGk5Wbm5N7tu5WlmlVWbJHcsbKPTydKoWdiSfKrtl2JbW2g4HbdzCTllHozsaONiX19SF1F56YpfslZsl7w/I2M7HTd3O0KEjI0x7BanbOy3Ny9ntNvWWJXTHxTlp7fon5GolbFTNTY52FVKVObmIpFE29hKl1M9eLLF4dXL2Zxm7gjWzkUMaYKTr5hHqNc4ZU0eiMSQycHOlriUtbALQTc1MNs2xPb+dLHHlJEHjRvFjjHwlNABsoPd4JR5BlHXpdnYeEiTnfvKGtTqUgg2P7eDjWfSNnabUw0lNrZxfj5B5ikdbMEOGNGw+UpKUI6TY8UvB7vC5+SVXmxsbKYTxe71YmDPO7zysDM17746G3ubU6ZlYmITPu84eY9aOfZjO/ckRvNxLEs7cQcRNvZvOKUkj33Gh10Mxw4+mpOkueE8XiRPEvu8FwOb6uTBIz4Hu2JPWq2ybePqFh1smQ/bOai5NzV6hWO75SA7S+txapyUk2cr54qNnfFPfVKkYdhULw8+mDcS6VRR7H1Oxe/ASEkT68hgaDXhSdjcSnkgNRe2XSVYm5NLeXt+QBsyY5rznTv7Z+5MTU45nDxjh7V1dWDg1J00pcU1CCw6xTRz50rgqCMU2+S2nTzoBmafEsSmTXAznLyNYkcUht28FFdxi0wQthHp0MXEsGGWuj7sbDbaQZ0p7uWxM/Wa/nBt2KW9KJfcLZ0mgJ2pfv9xbdhSjg/b7t/PksOez242+Ub5KWAHrOPwUVu3Qiut5LCbtasHB2HHTQ27dM6Tlip2tz5O0Mkz+YPojTspbCdRC8Hes/+bTxI7WgEzWew8z9RAsb1nbuV03MlgB11wJfiMksLOZnmG2trEymucxp0qdnHvXAs6p8SwSzyJWnFiDcgVOX1spdfNtoMMnhg217Rn0X6wkTPVmya2sJ2tlLZ79C+Tw3ZKLLsH5h3S1KPt/kkemw9lOksdW5uY85NdegEgOWxnpL149mxjY/HxEU1/LOtm5CumHtKK59aUYrYkFymOnhy29bC28b898z09zNNxeWRupd2lja10nZnUUvfMv0FykdwcfCp/fveEhd38d3gK7rx+atjFgoRMD+/7tkgOOzspKspftp4yscv/8Rfg5e7ilbSwi/slZFa866/nJogtbTcaf6Viu8+VevKHra2//rmXXJmBjq30mshiAcodHUliZyX9Px+zsafmbb5b2/jUX/LYZ7pn7SxtGjpJ7Kz49h3TyQfviWexpIQtKMVJKeu4OC1jSRa7+uaWhT19QzylIi1sQdH2uiVzsQv9ho5EsaX5xru/sbBfEM8kSQ0bgLWMrFTuNOk5czB2nHNqPn//X9Ng7CcviAfvpIgNOox2vT7/3nfzQhg28z4JujIXhwxqC/vxd0td2SgDz//Wu72H1DSZgR2dO5OpHzGozbb9GH24VLrYuwfCmRAdO0NdpRQssEdz6n+yLYL9+rtb7Kk76WKPXwnCQQzsGLpgOfn0ijjnGO0oyprT3YcPP9G/SRp7dsjCJh+VF+f5D/au3l1Vyc6KxFP5OAp2DHM7xu67tyDcB2yR8thqV4c/+7ePBw00zPXvD3bmZ0bjpmAvoYJsGfxeYHcYXdghZbV+fPVl2YAL0+8FdobRuA9ZD+2OrqEsQ0e/H9iMLuwo5FUEETWSc7mcfk+wa74uzA1yR2FvnnDlex4PVUPALev6vcBu+qztYrOe2Y1rFPwGDEQqNHeOby0cBzbXMQP1PLALOw59v4qrPNc5QHPnJolhM1/PEabgRO04wotvDB7ufgLYqteghstwz4NiGvutE4RGOR5uY0lsiKy73H15CW6R9HLnz8HzEGzseUu6HPjKE3SjJa0Nj2G43Dl5SD8Oj34+pGNPX4ftiT1RbcjDXVjWyYdqRnUPCzKB+HFtHpCoMR9Mb6qPebYh056ohwsEteWwVdDz685hgfPE79kqAbH8kLxfz698DrHwKBfO3Y+JbSC/kM/kbccC2DwuFiDSyx1sjtzUQA+ry6FtTQVeHn19liAgXqWD1H5oHQiGivhRLaCixpOkqQXUwkY491AucK1hx6Shj/ECts7phjmsgdi5oCOFKjugejlXkjaS0V6kkAvrU+CZ7mn225D4pJ3e4b8BIpmRk2F6D7Pd+EGNPhw5Zr6HwBEYTxbct3qNwGn4H5iJCiaohcn5GdQen/zPHh1aWe4QpgFLNO4a1cuP+XaGl9w9NAwyBca7zcwuzFF8O9ncueWws7RB92CHc29DRkK4eUIsHsPDXiLHsriXxM68pnh5eLdtC0ZnL5QZ1qia44QjN8s+0nzyCfhMpkrpwvhLSn2I4Li2ajW7wI3zHnbkXMMYeuDO7ywR0jJlCjZ/kcHqSBxvM4dZwQFdR7Ajn7IhF/J9VVX7esH7mYi/gYqSqE25iwz2pXdMbP1RCEDqI9jRWzfou7xotnzjvqSUlqTw3VwZlolV+9zM86GfzgjFju6heZQY/IAsLzP69Hdhg+eRfqBg2cDCMCyLUDN0FcOOPnDsG7IXxQt5fbiMl3d81p5SH3MSKBXlUK3OmWoHDDvHzm3o6kNPh7L8SV0Ce+5r21GrxX2bOwcjuu3JMqV3wbGZDTP4koCYprvdWYwr56i5QXIPmO9vpcgJ0SaJG7h8WDg2M6jllwhWfJJ8laXnUSKaKbcnHarIRSAb+AjHzrFslQuvWywpEps7R0PkJGBm5+VeBAMH6+PYpJdjG+vL1Mq4RA7CYk0EGQ4SPF33IuANXCewCbA+xr1UjZBHxITvYMA/NYDIzZ2gwYcyDS1PODkSh03DD1VsY4763DIisvI4Pp5xey6b1TO+4Y1FhyQ2ggmRVbRP6y+Xc4eLmOeOO9k5QtzX6CODTNdoBkGNYqlwbgUrxxaij1ciCR+MDKZclRWK+ijSEDG+bXA1R2Lnsb31jFsXhTKWy7lDVT5EQ/kSyzf6pBM7eFYX7vsaD1q6FQzxqkXscwkXXj1lvZ84TEHcVlfmi2hEwpKHtTjDTWvNImGK5sY6sPBpIJb0QG5gRbJp+/I0kHDroEewqxamtZea0GWqiS3UOmK9qDdcgdygX6P8I7F3QZaH/YLdJqy4v0TWzVYdjWgRx5x+BXPTROyswqsztHNc0znS68MwHz9ceqlOJG5yZ6cTBOmdlQekl7JMkYmRwU6sDA1TBG7yNVRI5y9bkSC1DBWrMgweLI8dHM/DrW3OrGEXJi1sbM4zCWsTeQtLtCwM507NybG5v8HGEr22J15uu3siorWBcKfVcc+xyaCEsDMjWm/lk+PBOsE2RDZJKZIT5eKQehJ3L6rmOBq468FDopaC5PPpWJtcqxQ2McC1Bs3aMpzbYwL52VC3flrV8T2Zc6hxRd5CcBiSpI1y3KHVN7r2Y/eRjc0SuAGnElcQyi0fH3Bjw+UjvAbXQ82NbOwfpzhKIT2VXhPlw/CUHBhxyHkm/ZAGjo0zdMrG0AXSaN2+6U6OkUghxw2u+gddwYZUh+QclwHne9LwcmetbZR15LDID0dKPL8f4ufksDJfsGc1oZ2tS6sWUhh7kj7ONRSxZrHlgh5mcr0QEtX8OVg/PwRhrWAMXddWk7d22Tf9NeUpKenONJfBIB/lw6ChUumewuRfwDHY4NnPHWQB8vyIgg46X558JfUpALooCxkOuRYyIINL0BiBS3pzkCr0U5l3EJZuKZyu8tQzsovNt1pHJ4KuNensfeBWesWyQL2lrNbhXZIWYVB938ztxXHE2b/hHHGH5SK82Ctv3RXqXX/cc0EjjsEGj1KrjQbIW6szGHiG51hB7yh8sMGhVCd8aPK6r+nP3mRvlAnPaNXhAOwVBzVkzcphufY/x0dT+A8DroTFkZqAo/vLp6nqwjH2wJwAKtctR4849ZdfOrLJK83UkMGXPf6wHH3wOsKdb0CjyC1czhUKIPF2uvfVNm6kUGz7tTU9MhhEXafUj+LpMJGH6aw66tsDzZTXauDKoompWVMR7Wge4a5WRzovODFsw5bprkRzdC7fGoDYFyLCqmpPfZ40XPb5c39l2CMdjBQm7Z9u0AdADv73oNFyTB9txakjFdYI2JamePModWw1b0z2zxrwyWyaVhSEhwPsyZe/7DqfHgmt87Y8jB5p+sNActik6fukid3PT85bY0CreO/OGI9fYeAL98MuvDLFRu9OzkfsXNT+0F/ylZn1iHxaIU0d3rUsYkLj3V83aLIfXAbYlV47tHTkO1xft+7SMoegBXQwThXrppr46u83tMBbDMcHj/zPeH2GPDJeKZ62JvEGC6qqcu2YSrYiBzPb4B9J8Gf4E7wUrbGGWsBy2g987rfLPf5Egr8ibrxVtFSXAyYvneeG6bHw6ZdHi0e/PnKwfyXvN3ZfvPCZiAvbfLvlLghwTgLzy+eODZyci9uC3108o2IryT/pJm3JCv+d4mPhFXxiOeHkymlrLdXsJdUen9Iedx5gcJDC/N8nD1vRTlsrrgMkJdXYb4FshfESC8zin5xnMcJUree/cfwz0oiSnDKkWMnpnhw5Rbt/gkORu7PGGFgRQAHrYxdAsWA12M+PW+f7cYYi91lw4FmQJ/t7Z72W99KkcaPVO99rT+TCME8z8f8DolVB6XcDy4gAAAAASUVORK5CYII=" class="max-w-full h-auto rounded" alt="">
-                </div>
-                <div class="lg:w-3/5 pr-4 pl-4 wow bounceInLeft" style="padding-right: ;" data-wow-delay="0.3s">
-                    <h1 class="display-5 mb-4" id="heading_h1">Swift Sunday Decision</h1>
-                    <p class="text-lg mb-6" id="about_p">
-                        Embarking on a remarkable journey, FiNaLTY Fintech found its inception through a swift and decisive moment during a Sunday rendezvous among the visionary founders. The name "FiNaLTY Fintech" was birthed within a mere 10 minutes, setting the stage for a transformative venture that would redefine the financial technology landscape.
-                    </p>
-                    <div class="flex flex-wrap g-4 text-gray-900 mb-5">
-                        <div class="sm:w-1/2 pr-4 pl-4 font-bold" id="points">
-                            <i class="fas fa-paper-plane orange_color me-2" id="icon_arrow"></i>Spontaneous Genesis
-                        </div>
-                        <div class="sm:w-1/2 pr-4 pl-4 font-bold" id="points">
-                            <i class="fas fa-paper-plane orange_color me-2" id="icon_arrow"></i>Rapid Branding Process
-                        </div>
-                        <div class="sm:w-1/2 pr-4 pl-4 font-bold" id="points">
-                            <i class="fas fa-paper-plane orange_color me-2" id="icon_arrow"></i>Foundation for Innovation
-                        </div>
-                        <div class="sm:w-1/2 pr-4 pl-4 font-bold" id="points">
-                            <i class="fas fa-paper-plane orange_color me-2" id="icon_arrow"></i>Sunday Spark
-                        </div>
-                    </div>
-                    <p class="text-lg" id="about_p">
-                        Beyond a mere decision, this Sunday spark became the catalyst for an extraordinary journey, shaping the core of FiNaLTY Fintech's identity. The spontaneous genesis, coupled with a rapid branding process, laid a solid foundation for innovation that continues to drive our commitment to excellence.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <!--15. About Satrt -->
-    {% comment %} <div class="container mx-auto sm:px-4 max-w-full mx-auto sm:px-4 py-5 mt-8 lg:mt-10" id="page">
-        <div class="container mx-auto sm:px-4">
-            <div class="flex flex-wrap g-5 items-center">
-                <div class="lg:w-2/5 pr-4 pl-4 wow bounceInLeft" data-wow-delay="0.1s">
-                    <img id="image_pix" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQO8-MPvcoYC042UlOwXh7HKBLrVf1MkhC_Ze9Z--76VCVeJsBmacQurorE-AnkH_dy4Do&usqp=CAU" class="max-w-full h-auto rounded" alt="Liquidity Innovation">
-                </div>
-                <div class="lg:w-3/5 pr-4 pl-4 wow bounceInRight" style="padding-right: ;" data-wow-delay="0.3s">
-                    <h1 class="display-5 mb-4" id="heading_h1">Liquidity Innovation Model</h1>
-                    <p class="mb-4" id="about_p">
-                        Revolutionizing rental transactions, our cutting-edge Liquidity Innovation Model is the catalyst for a paradigm shift in the real estate industry. Seamlessly transferring liquidity from tenants' accounts to landlords' accounts on time, we redefine the rental experience. Tenants enjoy the flexibility of a user-friendly repayment structure, ensuring a stress-free settlement of liquidity in the subsequent month.
-    
-                        At the core of our innovation are pioneering legal features that establish comprehensive safeguards for both tenants and landlords. This commitment creates a secure and trustworthy environment, elevating the rental landscape for all stakeholders.
-    
-                        As we navigate the future, our model becomes a beacon of progress, a testament to our unwavering dedication to redefining the status quo in real estate transactions.
-                    </p>
-                    <div class="flex flex-wrap g-4 text-gray-900 mb-5">
-                        <div class="sm:w-1/2 pr-4 pl-4 font-bold" id="points">
-                            <i class="fas fa-paper-plane orange_color me-2" id="icon_arrow"></i>Timely Liquidity Facilitation
-                        </div>
-                        <div class="sm:w-1/2 pr-4 pl-4 font-bold" id="points">
-                            <i class="fas fa-paper-plane orange_color me-2" id="icon_arrow"></i>Tenant-Friendly Repayment
-                        </div>
-                        <div class="sm:w-1/2 pr-4 pl-4 font-bold" id="points">
-                            <i class="fas fa-paper-plane orange_color me-2" id="icon_arrow"></i>Legal Safeguards for All
-                        </div>
-                        <div class="sm:w-1/2 pr-4 pl-4 font-bold" id="points">
-                            <i class="fas fa-paper-plane orange_color me-2" id="icon_arrow"></i>Secure and Trustworthy Environment
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-     {% endcomment %}
-    
-    <!-- About End -->
-    <!-- 16. About Satrt -->
-    {% comment %} <div class="container mx-auto sm:px-4 max-w-full mx-auto sm:px-4 py-5 mt-8 lg:mt-10" id="page">
-        <div class="container mx-auto sm:px-4">
-            <div class="flex flex-wrap g-5 items-center flex-row-reverse">
-                <div class="lg:w-2/5 pr-4 pl-4 wow bounceInRight" data-wow-delay="0.1s">
-                    <img id="image_pix" src="https://www.axa.co.uk/globalassets/liquidity-planning-masthead-img.svg" class="max-w-full h-auto rounded" alt="Tenant-Landlord Liquidity">
-                </div>
-                <div class="lg:w-3/5 pr-4 pl-4 wow bounceInLeft" style="padding-right: ;" data-wow-delay="0.3s">
-                    <h1 class="display-5 mb-4" id="heading_h1">Tenant-Landlord Liquidity</h1>
-                    <p class="mb-4" id="about_p">
-                        In our relentless pursuit of understanding tenant dynamics, our extensive research and surveys unveiled a remarkable trend: tenants consistently meet their financial commitments, including EMIs, on time. This profound insight ignited a spark of innovation within us, revealing a void in the real estate market that begged for a visionary solution.
-    
-                        We didn't just identify a gap; we envisioned a future where the tenant-landlord relationship is redefined by liquidity empowerment. Our solution is not merely about bridging the gap; it's about creating an ecosystem where financial transactions seamlessly merge with trust and security.
-    
-                        As pioneers in the real estate landscape, our journey involves transforming insights into impactful solutions. Here's how we do it:
-                    </p>
-                    <div class="flex flex-wrap g-4 text-gray-900 mb-5">
-                        <div class="sm:w-1/2 pr-4 pl-4 font-bold" id="points">
-                            <i class="fas fa-paper-plane orange_color me-2" id="icon_arrow"></i>Insights Transformed
-                        </div>
-                        <div class="sm:w-1/2 pr-4 pl-4 font-bold" id="points">
-                            <i class="fas fa-paper-plane orange_color me-2" id="icon_arrow"></i>Visionary Gap Recognition
-                        </div>
-                        <div class="sm:w-1/2 pr-4 pl-4 font-bold" id="points">
-                            <i class="fas fa-paper-plane orange_color me-2" id="icon_arrow"></i>Innovation Sparks Inspiration
-                        </div>
-                        <div class="sm:w-1/2 pr-4 pl-4 font-bold" id="points">
-                            <i class="fas fa-paper-plane orange_color me-2" id="icon_arrow"></i>Liquidity Empowerment
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> {% endcomment %}
-      <!-- About End -->
-    <!--17. About Satrt -->
-    <div class="container mx-auto sm:px-4 max-w-full mx-auto sm:px-4 py-5 mt-8 lg:mt-10" >
-        <div class="container mx-auto sm:px-4">
-            <div class="flex flex-wrap g-5 items-center">
-                <div class="lg:w-2/5 pr-4 pl-4 wow bounceInLeft" data-wow-delay="0.1s">
-                    <img id="image_pix" src="https://gi-strapi.s3.ap-south-1.amazonaws.com/Bonds_Hero_ea50db8fe7.svg" class="max-w-full h-auto rounded" alt="">
-                </div>
-                <div class="lg:w-3/5 pr-4 pl-4 wow bounceInRight" style="padding-right: ;" data-wow-delay="0.3s">
-                    <h1 class="display-5 mb-4" id="heading_h1">Rent Transaction Revolution</h1>
-                    <p class="mb-4" id="about_p">
-                        At FiNaLTY Fintech, our mission is to revolutionize the dynamics between landlords and tenants, creating a seamless and efficient transaction experience. The inspiration behind our company emerged from a personal challenge faced by the founders – a delay in receiving timely rent payments for their rented premises. This prompted a thorough analysis to determine if this issue was widespread or unique to their situation.
-                    </p>
-                    <div class="flex flex-wrap g-4 text-gray-900 mb-5">
-                        <div class="flex flex-wrap  g-4 text-gray-900 mb-5">
-                            <div class="sm:w-1/2 pr-4 pl-4 font-bold" id="points">
-                                <i class="fas fa-paper-plane orange_color me-2" id="icon_arrow" ></i><div>Transforming Rental Dynamics
-                            </div></div>
-                            <div class="sm:w-1/2 pr-4 pl-4 font-bold" id="points">
-                                <i class="fas fa-paper-plane orange_color me-2" id="icon_arrow" ></i><div>Personal Challenge, Global Solution
-                            </div></div>
-                            <div id="peoples"></div>
-                            <div class="sm:w-1/2 pr-4 pl-4 font-bold" id="points">
-                                <i class="fas fa-paper-plane orange_color me-2" id="icon_arrow" ></i><div>Seamless Rent Payments
-                            </div></div>
-                            <div class="sm:w-1/2 pr-4 pl-4 font-bold" id="points">
-                                <i class="fas fa-paper-plane orange_color me-2" id="icon_arrow" ></i><div>Analyzing Rent Payment Delays
-                            </div></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-
-    <!-- About End -->
-    {% comment %} <!-- 18. About Satrt -->
-    <div class="container mx-auto sm:px-4 max-w-full mx-auto sm:px-4 py-5 mt-8 lg:mt-10" id="page">
-        <div class="container mx-auto sm:px-4">
-            <div class="flex flex-wrap  g-5 items-center flex-row-reverse">
-                <div class="lg:w-2/5 pr-4 pl-4 wow bounceInRight" data-wow-delay="0.1s">
-                    <img id="image_pix" src="https://gi-strapi.s3.ap-south-1.amazonaws.com/Bonds_Hero_ea50db8fe7.svg" class="max-w-full h-auto rounded" alt="">
-                </div>
-                <div class="lg:w-3/5 pr-4 pl-4 wow bounceInLeft" style="padding-right: ;" data-wow-delay="0.3s">
-                    <h1 class="display-5 mb-4" id="heading_h1">Rent Transaction Revolution</h1>
-                    <ul>
-                    <li><p class="mb-4" id="about_p">At FiNaLTY Fintech, our mission is to revolutionize the dynamics between landlords and tenants, creating a seamless and efficient transaction experience. The inspiration behind our company emerged from a personal challenge faced by the founders – a delay in receiving timely rent payments for their rented premises. This prompted a thorough analysis to determine if this issue was widespread or unique to their situation.</p></li>
-                    </ul>
-                    <div class="flex flex-wrap  g-4 text-gray-900 mb-5">
-                        <div class="sm:w-1/2 pr-4 pl-4 font-bold" id="points">
-                            <i class="fas fa-paper-plane orange_color me-2" id="icon_arrow" ></i><div>Transforming Rental Dynamics
-                        </div></div>
-                        <div class="sm:w-1/2 pr-4 pl-4 font-bold" id="points">
-                            <i class="fas fa-paper-plane orange_color me-2" id="icon_arrow" ></i><div>Personal Challenge, Global Solution
-                        </div></div>
-                        <div id="peoples"></div>
-                        <div class="sm:w-1/2 pr-4 pl-4 font-bold" id="points">
-                            <i class="fas fa-paper-plane orange_color me-2" id="icon_arrow" ></i><div>Seamless Rent Payments
-                        </div></div>
-                        <div class="sm:w-1/2 pr-4 pl-4 font-bold" id="points">
-                            <i class="fas fa-paper-plane orange_color me-2" id="icon_arrow" ></i><div>Analyzing Rent Payment Delays
-                        </div></div>
-                </div>
-            </div>
-        </div>
-    </div> {% endcomment %}
-
-    <!-- About End -->
-
-    {% comment %} <!-- Service Start -->
-    <div class="container mx-auto sm:px-4 max-w-full mx-auto sm:px-4 service py-6">
-        <div class="container mx-auto sm:px-4">
-            <div class="text-center wow bounceInDown" data-wow-delay="0.1s">
-                <small class="inline-block fw-bold text-gray-900 uppercase orange_border py-2 px-4 px-4 py-1 mb-3" id="underLine">Our Services</small>
-                <h1 class="display-5 mb-5">What We Offer</h1>
-            </div>
-            <div class="flex flex-wrap  g-4">
-                <div class="lg:w-1/4 pr-4 pl-4 md:w-1/2 pr-4 pl-4 sm:w-full pr-4 pl-4 wow bounceInDown" data-wow-delay="0.1s">
-                    <div class="bg-gray-100 rounded service-item">
-                        <div class="service-content flex items-center justify-center p-6">
-                            <div class="service-content-icon text-center">
-                                <i class="fas fa-cheese fa-7x orange_color mb-4"></i>
-                                <h4 class="mb-3">Seamless Communication</h4>
-                                <p class="mb-4" id="about_p">Direct interaction between tenants and landlords for clear transactions.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="lg:w-1/4 pr-4 pl-4 md:w-1/2 pr-4 pl-4 sm:w-full pr-4 pl-4 wow bounceInDown" data-wow-delay="0.3s">
-                    <div class="bg-gray-100 rounded service-item">
-                        <div class="service-content flex items-center justify-center p-6">
-                            <div class="service-content-icon text-center">
-                                <i class="fas fa-pizza-slice fa-7x orange_color mb-4"></i>
-                                <h4 class="mb-3">Hassle-Free Payment Process</h4>
-                                <p class="mb-4" id="about_p">Automatic rent payments with personalized reminders for stress-free transactions.</p>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="lg:w-1/4 pr-4 pl-4 md:w-1/2 pr-4 pl-4 sm:w-full pr-4 pl-4 wow bounceInDown" data-wow-delay="0.5s">
-                    <div class="bg-gray-100 rounded service-item">
-                        <div class="service-content flex items-center justify-center p-6">
-                            <div class="service-content-icon text-center">
-                                <i class="fas fa-hotdog fa-7x orange_color mb-4"></i>
-                                <h4 class="mb-3">Intervention and Penalties</h4>
-                                <p class="mb-4" id="about_p">Prompt response to missed payments, with the company covering rent on behalf of the tenant.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="lg:w-1/4 pr-4 pl-4 md:w-1/2 pr-4 pl-4 sm:w-full pr-4 pl-4 wow bounceInDown" data-wow-delay="0.7s">
-                    <div class="bg-gray-100 rounded service-item">
-                        <div class="service-content flex items-center justify-center p-6">
-                            <div class="service-content-icon text-center">
-                                <i class="fas fa-hamburger fa-7x orange_color mb-4"></i>
-                                <h4 class="mb-3">Property Maintenance Assistance</h4>
-                                <p class="mb-4" id="about_p">Support for property upkeep for owners with substantial portfolios, ensuring well-maintained and secure properties.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> {% endcomment %}
-    <!-- Service End -->
-    {% comment %} <div class="text-center wow bounceInDown" data-wow-delay="0.1s">
-        <small class="inline-block fw-bold text-gray-900 uppercase orange_border py-2 px-4 px-4 py-1 mb-3" id="underLine">Our Gallery</small>
-        <h1 class="display-5 mb-5">Our Social & Professional Events Gallery</h1>
-    </div>
-    <div class="flex flex-col md:grid md:grid-cols-3 gap-3 p-5">
-        <div class="relative rounded overflow-hidden">
-          <img src="https://source.unsplash.com/400x300/?hanging-planters" alt="Hanging Planters" class="w-full">
-          <p
-            class="cursor-pointer absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-2xl text-center text-white font-roboto font-medium group-hover:bg-opacity-60 transition">
-            Hanging Planters
-          </p>
-        </div>
-        <div class="relative rounded overflow-hidden">
-          <img src="https://source.unsplash.com/400x300/?planter-stand" alt="Planter Stand with Pots" class="w-full">
-          <p
-            class="cursor-pointer absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-2xl text-center text-white font-roboto font-medium group-hover:bg-opacity-60 transition">
-            Planter Stand with Pots
-          </p>
-        </div>
-        <div class="relative rounded overflow-hidden">
-          <img src="https://source.unsplash.com/400x300/?watering-cans" alt="Watering Cans" class="w-full">
-          <p
-            class="cursor-pointer absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-2xl text-center text-white font-roboto font-medium group-hover:bg-opacity-60 transition">
-            Watering Cans
-          </p>
-        </div>
-      </div>
-    <!-- End of gallery--> {% endcomment %}
-
-    <!-- Menu Start -->
-    <!-- <div class="container mx-auto sm:px-4 max-w-full mx-auto sm:px-4 menu bg-gray-100 pt-10 pd-1 my-6">
-        <div class="container mx-auto sm:px-4">
-            <div class="text-center wow bounceInDown" data-wow-delay="0.1s">
-                {% comment %} <small class="inline-block fw-bold text-gray-900 uppercase orange_border py-2 px-4 px-4 py-1 mb-3" id="underLine">Values</small> {% endcomment %}
-                <h1 class="display-5 mb-5">Our Values</h1>
-            </div>
-            <div class="tab-class text-center">
-                <div class="tab-content">
-                    <div id="tab-6" class="tab-pane opacity-0 opacity-100 block p-0 active">
-                        <div class="flex flex-wrap  g-4">
-                            <div class="lg:w-1/2 pr-4 pl-4 wow bounceInDown" data-wow-delay="0.1s">
-                                <div class="menu-item flex items-center">
-                                    <div class="w-full flex flex-col text-start ps-4">
-                                        <div class="flex justify-between border-b bottom_color pb-2 mb-2">
-                                            <h4>Innovation</h4>
-                                        </div>
-                                        <p class="mb-0 text-justify mb-8">Embrace and drive innovative solutions to enhance the rental experience.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="lg:w-1/2 pr-4 pl-4 wow bounceInDown" data-wow-delay="0.2s">
-                                <div class="menu-item flex items-center">
-                                    <div class="w-full flex flex-col text-start ps-4">
-                                        <div class="flex justify-between border-b bottom_color pb-2 mb-2">
-                                            <h4>Trust</h4>
-                                        </div>
-                                        <p class="mb-0  text-justify mb-8 ">Build trust through prompt issue resolution, reliability, and fair practices.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="lg:w-1/2 pr-4 pl-4 wow bounceInDown" data-wow-delay="0.3s">
-                                <div class="menu-item flex items-center">
-                                    <div class="w-full flex flex-col text-start ps-4">
-                                        <div class="flex justify-between border-b bottom_color pb-2 mb-2">
-                                            <h4>Community</h4>
-                                        </div>
-                                        <p class="mb-0  text-justify mb-8 ">Create a collaborative and responsible housing community.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="lg:w-1/2 pr-4 pl-4 wow bounceInDown" data-wow-delay="0.4s">
-                                <div class="menu-item flex items-center">
-                                    <div class="w-full flex flex-col text-start ps-4">
-                                        <div class="flex justify-between border-b bottom_color pb-2 mb-2">
-                                            <h4>Efficiency</h4>
-                                        </div>
-                                        <p class="mb-0  text-justify mb-8 ">Streamline processes for both landlords and tenants, saving time and effort.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="lg:w-1/2 pr-4 pl-4 wow bounceInDown" data-wow-delay="0.5s">
-                                <div class="menu-item flex items-center">
-                                    <div class="w-full flex flex-col text-start ps-4">
-                                        <div class="flex justify-between border-b bottom_color pb-2 mb-2">
-                                            <h4>Transparency</h4>
-                                        </div>
-                                        <p class="mb-0  text-justify mb-8 ">Foster transparent communication and financial accountability.
-                                            Responsibility: Uphold a sense of responsibility towards property management and
-                                            community well-being.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="lg:w-1/2 pr-4 pl-4 wow bounceInDown" data-wow-delay="0.6s" >
-                                <div class="menu-item flex items-center">
-                                    <div class="w-full flex flex-col text-start ps-4">
-                                        <div class="flex justify-between border-b bottom_color pb-2 mb-2">
-                                            <h4>Our Commitment</h4>
-                                        </div>
-                                        <p class="mb-0  text-justify mb-8 ">We are committed to providing user-friendly platforms, promoting
-                                            fairness, and offering comprehensive property management services. Our dedication
-                                            is to facilitate smooth transactions, resolve issues promptly, and ensure a comfortable
-                                            living environment for all our stakeholders.</p>
-                                        </div>
-                                        <div id="peoples"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-            </div>
-        </div>
-    </div> -->
-    <!-- Menu End -->
-    <!-- component -->
-    <link rel="stylesheet" href="https://cdn.materialdesignicons.com/6.5.95/css/materialdesignicons.min.css" >
-<!-- MDI Icons -->
-
-<!-- Page Container -->
-<div class="flex items-center justify-center  bg-white transition duration-300 rounded-lg" style="box-shadow: 1px 3px 13px 0px #000000c2; padding: 4% 0%; margin-top: 2%;">
-    <div class="flex flex-col">
-
-        <div class="flex flex-col mt-8" id="scroll_kp">
-                <!-- Meet the Team -->
-                <div class="container max-w-7xl px-4">
-                    <!-- Section Header -->
-                    <div class="flex flex-wrap justify-center text-center mb-5">
-                        <div class="w-full lg:w-6/12 px-4">
-                            <!-- Header -->
-                            <div style="display: flex;justify-content: center;">
-                                <h1 class="text-gray-900 text-2xl font-bold mb-8" style="border-bottom: 3px double black; width: fit-content;">
-                                    Key Peoples
-                                </h1>
-                            </div>
-
-                            <!-- Description -->
-                            <p class="text-gray-700 text-lg font-light">
-                                Proudly led by our accomplished team, we bring a wealth of expertise and a commitment to excellence, ensuring success in every endeavor.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Team Members -->
-                    <div class="flex flex-wrap">
-                        <!-- Member #1 -->
-                        <div class="w-full md:w-6/12 lg:w-3/12 mb-6 px-6 sm:px-6 lg:px-4">
-                            <div class="flex flex-col">
-                                <!-- Avatar -->
-                                <a href="#" class="mx-auto">
-                                    <img class="rounded-2xl drop-shadow-md hover:drop-shadow-xl transition-all duration-200 delay-100"
-                                        src="https://images.unsplash.com/photo-1634926878768-2a5b3c42f139?fit=clamp&w=400&h=400&q=80">
-                                </a>
-
-                                <!-- Details -->
-                                <div class="text-center mt-6">
-                                    <!-- Name -->
-                                    <h1 class="text-gray-900 text-xl font-bold mb-1">
-                                        Mrs. Sorna Rajathy <span style="font-size: 15px;">M.Sc</span>
-                                    </h1>
-
-                                    <!-- Title -->
-                                    <div class="text-gray-700 font-light mb-2">
-                                        Director
-                                    </div>
-
-                                    <!-- Social Icons -->
-                                    {% comment %} <div class="flex items-center justify-center opacity-50 hover:opacity-100
-                                    transition-opacity duration-300">
-                                        <!-- Linkedin -->
-                                        <a href="#" class="flex rounded-full hover:bg-indigo-50 h-10 w-10">
-                                            <i class="mdi mdi-linkedin text-indigo-500 mx-auto mt-2"></i>
-                                        </a>
-
-                                        <!-- Twitter -->
-                                        <a href="#" class="flex rounded-full hover:bg-blue-50 h-10 w-10">
-                                            <i class="mdi mdi-twitter text-blue-300 mx-auto mt-2"></i>
-                                        </a>
-
-                                        <!-- Instagram -->
-                                        <a href="#" class="flex rounded-full hover:bg-orange-50 h-10 w-10">
-                                            <i class="mdi mdi-instagram text-orange-400 mx-auto mt-2"></i>
-                                        </a>
-                                    </div> {% endcomment %}
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Member #2 -->
-                        <div class="w-full md:w-6/12 lg:w-3/12 mb-6 px-6 sm:px-6 lg:px-4">
-                            <div class="flex flex-col">
-                                <!-- Avatar -->
-                                <a href="#" class="mx-auto">
-                                    <img class="rounded-2xl drop-shadow-md hover:drop-shadow-xl transition-all duration-200 delay-100"
-                                        src="https://images.unsplash.com/photo-1634896941598-b6b500a502a7?fit=clamp&w=400&h=400&q=80">
-                                </a>
-
-                                <!-- Details -->
-                                <div class="text-center mt-6">
-                                    <!-- Name -->
-                                    <h1 class="text-gray-900 text-xl font-bold mb-1">
-                                        Mrs. Merit Agasta <span style="font-size: 15px;">M.Com</span>
-                                    </h1>
-
-                                    <!-- Title -->
-                                    <div class="text-gray-700 font-light mb-2">
-                                        Director
-                                    </div>
-
-                                    {% comment %} <!-- Social Icons -->
-                                    <div class="flex items-center justify-center opacity-50 hover:opacity-100
-                                    transition-opacity duration-300">
-                                        <!-- Linkedin -->
-                                        <a href="#" class="flex rounded-full hover:bg-indigo-50 h-10 w-10">
-                                            <i class="mdi mdi-linkedin text-indigo-700 mx-auto mt-2"></i>
-                                        </a>
-
-                                        <!-- Twitter -->
-                                        <a href="#" class="flex rounded-full hover:bg-blue-50 h-10 w-10">
-                                            <i class="mdi mdi-twitter text-blue-400 mx-auto mt-2"></i>
-                                        </a>
-
-                                        <!-- Instagram -->
-                                        <a href="#" class="flex rounded-full hover:bg-orange-50 h-10 w-10">
-                                            <i class="mdi mdi-instagram text-orange-400 mx-auto mt-2"></i>
-                                        </a>
-                                    </div> {% endcomment %}
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Member #3 -->
-                        <div class="w-full md:w-6/12 lg:w-3/12 mb-6 px-6 sm:px-6 lg:px-4">
-                            <div class="flex flex-col">
-                                <!-- Avatar -->
-                                <a href="#" class="mx-auto"> 
-                                    <img class="rounded-2xl drop-shadow-md hover:drop-shadow-xl transition-all duration-200 delay-100"
-                                        src="https://images.unsplash.com/photo-1635003913011-95971abba560?fit=clamp&w=400&h=400&q=80">
-                                </a>
-
-                                <!-- Details -->
-                                <div class="text-center mt-6">
-                                    <!-- Name -->
-                                    <h1 class="text-gray-900 text-xl font-bold mb-1">
-                                        Yet to reveal
-                                    </h1>
-
-                                    <!-- Title -->
-                                    <div class="text-gray-700 font-light mb-2">
-                                        ...
-                                    </div>
-
-                                    {% comment %} <!-- Social Icons -->
-                                    <div class="flex items-center justify-center opacity-50 hover:opacity-100
-                                    transition-opacity duration-300">
-                                        <!-- Linkedin -->
-                                        <a href="#" class="flex rounded-full hover:bg-indigo-50 h-10 w-10">
-                                            <i class="mdi mdi-linkedin text-indigo-700 mx-auto mt-2"></i>
-                                        </a>
-
-                                        <!-- Twitter -->
-                                        <a href="#" class="flex rounded-full hover:bg-blue-50 h-10 w-10">
-                                            <i class="mdi mdi-twitter text-blue-400 mx-auto mt-2"></i>
-                                        </a>
-
-                                        <!-- Instagram -->
-                                        <a href="#" class="flex rounded-full hover:bg-orange-50 h-10 w-10">
-                                            <i class="mdi mdi-instagram text-orange-400 mx-auto mt-2"></i>
-                                        </a>
-                                    </div> {% endcomment %}
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Member #4 -->
-                        <div class="w-full md:w-6/12 lg:w-3/12 mb-6 px-6 sm:px-6 lg:px-4">
-                            <div class="flex flex-col">
-                                <!-- Avatar -->
-                                <a href="#" class="mx-auto">
-                                    <img class="rounded-2xl drop-shadow-md hover:drop-shadow-xl transition-all duration-200 delay-100"
-                                        src="https://images.unsplash.com/photo-1635003913011-95971abba560?fit=clamp&w=400&h=400&q=80">
-                                </a>
-
-                                <!-- Details -->
-                                <div class="text-center mt-6">
-                                    <!-- Name -->
-                                    <h1 class="text-gray-900 text-xl font-bold mb-1">
-                                        Yet to reveal
-                                    </h1>
-
-                                    <!-- Title -->
-                                    <div class="text-gray-700 font-light mb-2">
-                                        ...
-                                    </div>
-
-                                    {% comment %} <!-- Social Icons -->
-                                    <div class="flex items-center justify-center opacity-50 hover:opacity-100
-                                    transition-opacity duration-300">
-                                        <!-- Linkedin -->
-                                        <a href="#" class="flex rounded-full hover:bg-indigo-50 h-10 w-10">
-                                            <i class="mdi mdi-linkedin text-indigo-700 mx-auto mt-2"></i>
-                                        </a>
-
-                                        <!-- Twitter -->
-                                        <a href="#" class="flex rounded-full hover:bg-blue-50 h-10 w-10">
-                                            <i class="mdi mdi-twitter text-blue-400 mx-auto mt-2"></i>
-                                        </a>
-
-                                        <!-- Instagram -->
-                                        <a href="#" class="flex rounded-full hover:bg-orange-50 h-10 w-10">
-                                            <i class="mdi mdi-instagram text-orange-400 mx-auto mt-2"></i>
-                                        </a>
-                                    </div> {% endcomment %}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End of the team  -->
-    
-    <!-- Blog Start -->
-    <div class="container mx-auto sm:px-4 max-w-full mx-auto sm:px-4 blog py-20">
-        <div class="container mx-auto sm:px-4">
-            <div class="text-center wow bounceInDown" data-wow-delay="0.1s">
-                {% comment %} <small class="inline-block fw-bold text-gray-900 uppercase orange_border py-2 px-4 px-4 py-1 mb-3" id="underLine">Our V/M</small> {% endcomment %}
-            </div>
-            <div class="flex flex-wrap  gx-4 justify-center">
-                <div class="md:w-1/2 pr-4 pl-4 lg:w-1/2 pr-4 pl-4 wow bounceInLeft" data-wow-delay="0.3s">
-                    <div class="blog-item">
-                        <div class="overflow-hidden rounded max-w-full w-full" style="display: flex; align-items: center; justify-content: center;"> 
-                            <img  style="height: 19rem;" src="https://github.com/NagiPragalathan/GeeksforGeeks_files/blob/main/finalty/Screenshot%202023-12-30%20225553.png?raw=true"  alt="">
-                        </div>
-                        <div class="w-full mx-0 flex flex-wrap  flex rounded bg-gray-100">
-                            <div class="text-gray-900 orange_background1 rounded-t mt-2 w-full ">
-                                <div class="h-full p-6 flex flex-col justify-center text-center">
-                                    <h1 class="fw-bold mb-0">Vision</h1>
-                                </div>
-                            </div>
-                            <p href="#" class="h5 lh-base my-auto h-full p-6" style="text-align: justify;">Empowering landlords and tenants with seamless, accountable, and transparent rental interactions for harmonious living.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="md:w-1/2 pr-4 pl-4 lg:w-1/2 pr-4 pl-4 wow bounceInRight" data-wow-delay="0.5s">
-                    <div class="blog-item">
-                        <div class="overflow-hidden rounded max-w-full w-full" style="display: flex; align-items: center; justify-content: center;">
-                            <img style="height: 19rem;" src="https://github.com/NagiPragalathan/GeeksforGeeks_files/blob/main/finalty/Screenshot%202023-12-30%20230033.png?raw=true" alt="">
-                        </div>
-                            <div class="w-full mx-0 flex flex-wrap  flex rounded bg-gray-100">
-                            <div class="text-gray-900 orange_background1 rounded-t w-full" style='margin-top: 9px;'>
-                                <div class="h-full p-6 flex flex-col justify-center text-center">
-                                    <h1 class="fw-bold mb-0">Mission</h1>
-                                </div>
-                            </div>
-                            <p class="h5 lh-base my-auto h-full p-6" style="text-align: justify;">Transforming real estate through comprehensive services, promoting harmony, and empowering property stakeholders for a sustainable future.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Blog End -->
-
 <!-- component -->
-<!-- 
-Coming Soon Page
-Created by Surjith S M
-for: https://web3templates.com
--->
-<section class="bg-white dark:bg-gray-900" id="scroll_contact">
-    <div class="container px-6 mx-auto">
-        <div>
-            <div style="display: flex; justify-content: center; align-items: center; flex-direction: column;"> 
-                <h1 class="mt-2 text-2xl font-semibold text-gray-800 md:text-3xl dark:text-white" style="width: 16%%; border-bottom: 3px double black;">Contact us</h1>
-                <p class="mt-3 text-gray-500 dark:text-gray-400">We love to hear from you. Please fill out this form or shoot us an email.</p>
-            </div>
-        </div>
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;1,100;1,200&display=swap"
+  rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
 
-        <div class="grid grid-cols-1 gap-8 mt-10 lg:grid-cols-2">
-            <div class="grid grid-cols-1 gap-1 md:grid-cols-2">
-                <div>
-                    <span class="inline-block p-3 text-blue-500 rounded-full bg-blue-100/80 dark:bg-gray-800">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
-                        </svg>
-                    </span>
+<style>
+  section {
+    font-family: "Poppins", sans-serif;
+  }
 
-                    <h2 class="mt-4 text-base font-medium text-gray-800 dark:text-white">Email</h2>
-                    <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Our friendly team is here to help.</p>
-                    <p class="mt-2 text-sm text-blue-500 dark:text-blue-400"><a href="mailto:headoffice@finalty.in">headoffice@finalty.in</a></p>
-                </div>
+  /* Highlighted nav link */
+  .active-link {
+    color: #1d4ed8;
+    font-weight: bold;
+  }
+</style>
 
-                <div>
-                    <span class="inline-block p-3 text-blue-500 rounded-full bg-blue-100/80 dark:bg-gray-800">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
-                        </svg>
-                    </span>
-                    
-                    <h2 class="mt-4 text-base font-medium text-gray-800 dark:text-white">Live chat</h2>
-                    <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Our friendly team is here to help.</p>
-                    <p class="mt-2 text-sm text-blue-500 dark:text-blue-400"><a href="https://wa.me/919566179499">Start new chat</a></p>
-                </div>
-
-                <div>
-                    <span class="inline-block p-3 text-blue-500 rounded-full bg-blue-100/80 dark:bg-gray-800">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
-                        </svg>
-                    </span>
-                    
-                    <h2 class="mt-4 text-base font-medium text-gray-800 dark:text-white">Office</h2>
-                    <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Come say hello at our office HQ.</p>
-                    <p class="mt-2 text-sm text-blue-500 dark:text-blue-400">Plot no 73, max worth nagar, phase 3, Kolapakkam, Chennai 600128 </p>
-                </div>
-
-                <div>
-                    <span class="inline-block p-3 text-blue-500 rounded-full bg-blue-100/80 dark:bg-gray-800">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
-                        </svg>
-                    </span>
-                    
-                    <h2 class="mt-4 text-base font-medium text-gray-800 dark:text-white">Phone</h2>
-                    <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Mon-Fri from 8am to 5pm.</p>
-                    <p class="mt-2 text-sm text-blue-500 dark:text-blue-400"><a href="tel:+917550114224">+91 7550114224</a></p>
-                </div>
-            </div>
-
-            <div class="p-4 py-6 rounded-lg bg-gray-50 dark:bg-gray-800 md:p-8">
-                <form action="{% url 'contact_form' %}" method="post" enctype="multipart/form-data">
-                    {% csrf_token %}
-                    <div class="-mx-2 md:items-center md:flex">
-                        <div class="flex-1 px-2">
-                            <label class="block mb-2 text-sm text-gray-600 dark:text-gray-200">First Name</label>
-                            <input type="text" placeholder="John " required name="fname" class="block w-full px-5 py-2.5 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" />
-                        </div>
-
-                        <div class="flex-1 px-2 mt-4 md:mt-0">
-                            <label class="block mb-2 text-sm text-gray-600 dark:text-gray-200">Last Name</label>
-                            <input type="text" placeholder="Doe" required name="lname" class="block w-full px-5 py-2.5 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" />
-                        </div>
-                    </div>
-
-                    <div class="mt-4">
-                        <label class="block mb-2 text-sm text-gray-600 dark:text-gray-200">Email address</label>
-                        <input type="email" name="mail" required placeholder="headoffice@finalty.in" class="block w-full px-5 py-2.5 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" />
-                    </div>
-
-                    <div class="w-full mt-4">
-                        <label class="block mb-2 text-sm text-gray-600 dark:text-gray-200">Message</label>
-                        <textarea name="message" style="height:125px" required class="block w-full h-32 px-5 py-2.5 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg md:h-56 dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" placeholder="Message"></textarea>
-                    </div>
-
-                    <button type="submit" class="w-full px-6 py-3 mt-4 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-500 rounded-lg hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50">
-                        Send message
-                    </button>
-                </form>
-            </div>
-        </div>
-    </div>
-</section>
-<div class="relative overflow-hidden" id="contact_us">
-    <!-- component contact us -->
-    <!-- End of contact us -->
-
-    <!-- component -->
-<footer class="relative bg-blueGray-200 pt-8">
-  <div class="container mx-auto px-4">
-    <div class="flex flex-wrap text-left lg:text-left">
-      <div class="w-full lg:w-6/12 px-4">
-        <h4 class="text-3xl fonat-semibold text-blueGray-700">Let's keep in touch!</h4>
-        <h5 class="text-lg mt-0 mb-2 text-blueGray-600">
-          Find us on any of these platforms, we respond 1-2 business days.
-        </h5>
-        <div class="mt-6 lg:mb-0 mb-6">
-          <button class="bg-white text-lightBlue-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button">
-            <i class="fab fa-twitter"></i></button><button class="bg-white text-lightBlue-600 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button">
-            <i class="fab fa-facebook-square"></i></button><button class="bg-white text-pink-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button">
-            <i class="fab fa-instagram"></i>
-          </button>
-        </div>
+<!-- Page Main -->
+<main class="flex flex-col items-center justify-center mt-32">
+  <header class="container">
+    <!-- Navbar -->
+    <nav
+      class="flex justify-between md:justify-around py-4 bg-white/80 backdrop-blur-md shadow-md w-full px-10 fixed top-0 left-0 right-0 z-10 px-8 md:px-3">
+      <!-- Logo Container -->
+      <div class="flex items-center">
+        <!-- Logo -->
+        <a class="cursor-pointer">
+          <img
+            class="h-10"
+            src="https://github.com/NagiPragalathan/Xtracut_Log_Management_System/blob/30d16e6da23112429fb2d6c5ceb3d1d187746857/static/xtracut_logo_retina_dark_31-7.png?raw=true"
+            alt="Store Logo" />
+        </a>
       </div>
-      <div class="w-full lg:w-6/12 px-4">
-        <div class="flex flex-wrap items-top mb-6">
-          <div class="w-full lg:w-4/12 px-4 ml-auto">
-            <span class="block text-blueGray-500 text-sm font-semibold mb-2"><b>Useful Links</b></span>
-            <ul class="list-unstyled">
-              <li>
-                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm cursor-pointer" data-offset="100" onclick="scrollToSection('about')">About Us</a>
-              </li>
-              <li>
-                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm cursor-pointer" data-offset="55" onclick="scrollToSection('service')">Services</a>
-              </li>
-              <li>
-                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm cursor-pointer" data-offset="55" onclick="scrollToSection('peoples')">Key Peoples</a>
-              </li>
-              <li>
-                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm cursor-pointer" data-offset="55" onclick="scrollToSection('contact')">Contact Us</a>
-              </li>
-            </ul>
-          </div>
-          <div class="w-full lg:w-4/12 px-4">
-            <span class="block text-blueGray-500 text-sm font-semibold mb-2"><b>Other Resources</b></span>
-            <ul class="list-unstyled">
-              <li>
-                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="#">Terms &amp; Conditions</a>
-              </li>
-              <li>
-                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="#">Privacy Policy</a>
-              </li>
-            </ul>
-          </div>
-        </div>
+
+      <!-- Links Section -->
+      <div
+        id="navbar"
+        class="items-center md:space-x-8 justify-center justify-items-start md:justify-items-center md:flex md:pt-2 w-full left-0 top-16 px-5 md:px-10 py-3 md:py-0 border-t md:border-t-0">
+        <a href="#home"
+          class="flex text-gray-600 hover:text-blue-500 cursor-pointer transition-colors duration-300">
+          Home
+        </a>
+
+        <a href="#overview"
+          class="flex text-gray-600 cursor-pointer transition-colors duration-300">
+          Overview
+        </a>
+
+        <a href="#features"
+          class="flex text-gray-600 hover:text-blue-500 cursor-pointer transition-colors duration-300">
+          Features
+        </a>
+      </div>
+
+      <!-- Auth Links -->
+      <div class="flex items-center space-x-5 hidden md:flex">
+        <a
+          class="flex text-gray-600 cursor-pointer transition-colors duration-300 font-semibold text-blue-600">
+          Login
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home"
+    class="flex flex-wrap items-center -mx-3 font-sans px-4 mx-auto w-full lg:max-w-screen-lg sm:max-w-screen-sm md:max-w-screen-md pb-20">
+    <!-- Column-1 -->
+    <div class="px-3 w-full lg:w-2/5">
+      <div
+        class="mx-auto mb-8 max-w-lg text-center lg:mx-0 lg:max-w-md lg:text-left">
+        <h2 class="mb-4 text-3xl font-bold text-left lg:text-5xl">
+          Xtracut Log Management System
+          <span class="text-5xl text-blue-500 leading-relaxeds">
+            Dashboard
+          </span>
+        </h2>
+
+        <p
+          class="visible mx-0 mt-3 mb-0 text-sm leading-relaxed text-left text-slate-400">
+          Monitor plugin usage and system performance in real-time.
+        </p>
+      </div>
+
+      <div class="text-center lg:text-left">
+        <a
+          class="block visible py-4 px-8 mb-4 text-xs font-semibold tracking-wide leading-none text-white bg-blue-500 rounded cursor-pointer sm:mr-3 sm:mb-0 sm:inline-block">
+          Key Features
+        </a>
       </div>
     </div>
-    <hr class="my-6 border-blueGray-300">
-    <div class="flex flex-wrap items-center md:justify-between justify-center">
-      <div class="w-full md:w-4/12 px-4 mx-auto text-center">
-        <div class="text-sm text-blueGray-500 font-semibold py-1">
-          Copyright © <span id="get-current-year">2023</span><a href="#" class="text-blueGray-500 hover:text-gray-800" target="_blank"> <span class="com_name"><span class="com_name" >FiN<span id="main_name">a</span>LTY</span></span> FinTech Private Limited
-          <a href="https://www.creative-tim.com?ref=njs-profile" class="text-blueGray-500 hover:text-blueGray-800"></a>
-        </div>
+
+    <!-- Column-2 -->
+    <div class="px-3 mb-12 w-full lg:mb-0 lg:w-3/5">
+      <div class="flex justify-center items-center">
+        <svg class="block max-w-full h-auto align-middle lg:max-w-lg" xmlns="http://www.w3.org/2000/svg" height="400" viewBox="0 0 524.67004 627.58314" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <path d="M369.04619,148.0378h51.762v17.04364c0,28.5682-23.19375,51.76195-51.76195,51.76195h-.00005v-68.80558h0Z" transform="translate(789.85437 364.88118) rotate(-180)" fill="#2f2e41"></path>
+            <polygon points="409.33502 185.02664 418.23482 225.05637 366.08305 216.39672 387.33502 178.53845 409.33502 185.02664" fill="#a0616a"></polygon>
+            <polygon points="409.33502 185.02664 418.23482 225.05637 366.08305 216.39672 387.33502 178.53845 409.33502 185.02664" opacity=".1"></polygon>
+            <rect x="359.33502" y="270.53845" width="50" height="74" transform="translate(768.67004 615.07691) rotate(-180)" fill="#a0616a"></rect>
+            <path d="M441.83502,405.03845l-11,59s7,41-14,83l-14,43-21-3s13-32,13-46c0-14,3-68,3-68l-1.5-61.61811,45.5-6.38189Z" fill="#2f2e41"></path>
+            <path d="M378.83502,586.03845s24-9,26,4l-1,6s9,27-4,29c-13,2-25,5-26-1-1-6-.98425-13.48966,1.50787-18.74483,2.49213-5.25517,3.49213-19.25517,3.49213-19.25517Z" fill="#2f2e41"></path>
+            <g>
+            <path d="M366.13446,395.88629l-5.84242,59.73162s-18.12633,37.43576-9.63539,83.61913l1.48898,45.19716,21.00587,2.95865s-3.58764-34.353,.30589-47.80069c3.89353-13.44769,16.0298-66.15169,16.0298-66.15169l18.5774-58.77007-41.93013-18.7841Z" fill="#2f2e41"></path>
+            <path d="M376.31126,587.26662s-20.5502-15.31957-26.08672-3.38865l-.70811,6.04141s-16.1539,23.43185-4.22298,28.96837c11.93092,5.53652,22.62319,11.75548,25.25239,6.2703,2.62921-5.48519,4.69702-12.68375,3.76473-18.42469-.9323-5.74094,2.00069-19.46674,2.00069-19.46674Z" fill="#2f2e41"></path>
+            </g>
+            <path d="M429.83502,310.53845c23.51917,21.94757,25.26404,56.67346,11.5,98,0,0-44,30-76-8l-16-77,80.5-13Z" fill="#2f2e41"></path>
+            <path d="M390.33502,203.53845l25,4-2,63,28,56-36,18s-28-53-33-86c-5-33-2-57-2-57l20,2Z" fill="#6c63ff"></path>
+            <path d="M371.33502,205.53845l-25,4,2,63-6,58,14,16s28-53,33-86,2-57,2-57l-20,2Z" fill="#6c63ff"></path>
+            <path d="M401.33502,207.03845l5.5-1.5s19.5-2.5,22.5,5.5c3,8,2,55,2,55,0,0,5.16,57.68504-14.92,58.34252-20.08,.65748-16.08-47.34252-16.08-47.34252l1-70Z" fill="#6c63ff"></path>
+            <circle cx="400.60838" cy="170.13134" r="25.881" fill="#a0616a"></circle>
+            <path d="M368.33502,209.03845l-5.5-1.5s-19.5-2.5-22.5,5.5-2,55-2,55c0,0-5.16,57.68504,14.92,58.34252s16.08-47.34252,16.08-47.34252l-1-70Z" fill="#6c63ff"></path>
+            <path d="M385.65786,205.75047c-5.55216-1.40863-11.84681,4.52132-14.06128,13.24853-.93243,3.47409-1.01931,7.12088-.2534,10.63535l-2.38571,9.92043-.17551-.00924-18.81824,44.34887c-4.37547,10.31165-3.91314,22.14968,1.66767,31.86201,3.3199,5.77765,7.67792,9.66177,12.79497,5.69682,8.49085-6.57912,14.03686-44.24916,16.56905-65.88826l5.85496-21.9959c2.35018-2.72464,4.01347-5.97257,4.85067-9.47191,2.2149-8.72385-.49107-16.93801-6.04318-18.34671Z" fill="#a0616a"></path>
+            <path d="M351.0597,191.06934c1.31647-4.00284,3.91522-7.50723,5.07796-11.55742,1.54386-5.37763,4.83076,6.55243,5.15143,.96678,.60951-10.61668,16.81288-37.92626,26.06316-43.17205,9.25028-5.24583,14.56315-3.66417,23.98727,1.26249,0,0,4.57463,.29093,10.26981,3.10267,5.69518,2.81174,10.82161,7.31486,13.03674,13.26749,1.7558,4.7183,1.56147,9.89986,2.14813,14.89992,1.63436,13.92994,9.44292,27.17801,7.76691,41.10298-.52286,4.3445-2.17418,8.83707-5.72639,11.39244-3.55221,2.55534-9.29104,2.27736-11.62924-1.42142-.79788-1.26218-1.13531-2.75965-1.81906-4.08713-.6838-1.32748-1.91931-2.56501-3.41201-2.5237-2.2436,.06211-3.38562,3.07261-2.5009,5.13537s2.96377,3.30817,4.91583,4.41597c-4.6491,2.0915-10.41629,1.44022-14.48185-1.63548-4.06552-3.0757-6.26097-8.44832-5.51283-13.49099,1.05424-7.10612,11.4065-5.63531,12.62603-12.71492,.88773-5.15371,4.00542-13.77714,3.15622-18.93732-.8492-5.16022-4.92762,1.08784-.63124-1.89373-4.72678,2.27867-14.83731-13.30983-19.78567-15.05584-4.94831-1.74601-9.14394-5.5267-11.39402-10.26715-5.24845,7.60821-9.86523,5.54211-11.7449,14.59185-1.87967,9.04974-.14171,29.60975,7.598,34.66228-3.09743,2.11334-5.56661,5.13552-7.01993,8.59211-.82334,1.95819-1.35711,4.10081-2.72366,5.72716-2.60993,3.10617-7.4291,3.29511-11.27027,1.98909-4.76288-1.61941-8.83514-5.17625-11.08048-9.67806-2.24534-4.50181-2.63675-9.89451-1.06507-14.67338Z" fill="#2f2e41"></path>
+            <path d="M0,626.13577c0,.66003,.53003,1.19,1.19006,1.19H523.48004c.65997,0,1.19-.52997,1.19-1.19,0-.65997-.53003-1.19-1.19-1.19H1.19006c-.66003,0-1.19006,.53003-1.19006,1.19Z" fill="#3f3d56"></path>
+            <g>
+            <path d="M340.03771,.99983H134.36885c-23.32296,0-42.22995,18.90699-42.22995,42.22995V583.66267c0,23.32291,18.90695,42.22986,42.22986,42.22986h205.66894c23.32296,0,42.22995-18.90699,42.22995-42.22995V43.22978c0-23.32296-18.90699-42.22995-42.22995-42.22995Z" fill="#fff"></path>
+            <path d="M340.03782,626.89209H134.36888c-23.83691,0-43.22998-19.39258-43.22998-43.22949V43.22998C91.1389,19.39307,110.53196,0,134.36888,0h205.66895c23.83691,0,43.22998,19.39307,43.22998,43.22998V583.6626c0,23.83691-19.39307,43.22949-43.22998,43.22949ZM134.36888,2c-22.73438,0-41.22998,18.49561-41.22998,41.22998V583.6626c0,22.73438,18.49561,41.22949,41.22998,41.22949h205.66895c22.73438,0,41.22998-18.49512,41.22998-41.22949V43.22998c0-22.73438-18.49561-41.22998-41.22998-41.22998H134.36888Z" fill="#3f3d56"></path>
+            <path d="M75.14368,94.56643c-1.80561,0-3.27392,1.46831-3.27392,3.27392v26.1914c0,1.80561,1.46831,3.27392,3.27392,3.27392s3.27392-1.46831,3.27392-3.27392v-26.1914c0-1.80561-1.46831-3.27392-3.27392-3.27392Z" fill="#3f3d56"></path>
+            <path d="M354.93558,87.46124h-82.66786c-3.50634,0-6.35907-2.85273-6.35907-6.35907s2.85273-6.35907,6.35907-6.35907h82.66786c3.50634,0,6.35907,2.85273,6.35907,6.35907s-2.85273,6.35907-6.35907,6.35907Z" fill="#e6e6e6"></path>
+            <path d="M277.38221,137.46854h-80.3571c-2.02587,0-3.67427-1.64841-3.67427-3.67428s1.64841-3.67351,3.67427-3.67351h80.3571c2.02587,0,3.67351,1.64765,3.67351,3.67351,0,2.02587-1.64764,3.67427-3.67351,3.67427Z" fill="#6c63ff"></path>
+            <ellipse cx="78.32235" cy="92.07002" rx="64.899" ry="63.53157" fill="#6c63ff"></ellipse>
+            <path d="M100.34912,60.02429c-8.64008,15.73267-17.28021,31.46545-25.92029,47.19818-5.50665-9.72955-10.98322-19.47626-16.50342-29.19818-1.90643-3.3576-7.09204-.33765-5.18079,3.02832,6.39911,11.2699,12.73193,22.57727,19.13104,33.84717,1.09412,1.92694,4.09796,1.97168,5.18085,0,9.49115-17.28241,18.9823-34.56482,28.47345-51.84717,1.8598-3.38647-3.31964-6.41742-5.18085-3.02832Z" fill="#fff"></path>
+            <rect x="117.61763" y="14.65784" width="46.49807" height="5.96129" rx=".31021" ry=".31021" fill="#e6e6e6"></rect>
+            <circle cx="318.33631" cy="15.8501" r="4.76903" fill="#e6e6e6"></circle>
+            <circle cx="331.45115" cy="15.8501" r="4.76903" fill="#e6e6e6"></circle>
+            <circle cx="344.56599" cy="15.8501" r="4.76903" fill="#e6e6e6"></circle>
+            <path d="M133.86826,157.13577c0,.66003,.53003,1.19,1.19006,1.19h204.28998c.65997,0,1.19-.52997,1.19-1.19,0-.65997-.53003-1.19-1.19-1.19H135.05832c-.66003,0-1.19006,.53003-1.19006,1.19Z" fill="#3f3d56"></path>
+            <g>
+            <path d="M319.7578,250.66658h-122.59803c-2.02587,0-3.67427-1.64842-3.67427-3.67428s1.64841-3.67351,3.67427-3.67351h122.59803c2.02587,0,3.67351,1.64765,3.67351,3.67352,0,2.02587-1.64764,3.67427-3.67351,3.67427Z" fill="#6c63ff"></path>
+            <path d="M319.7578,303.66658h-122.59803c-2.02587,0-3.67427-1.64842-3.67427-3.67428s1.64841-3.67351,3.67427-3.67351h122.59803c2.02587,0,3.67351,1.64765,3.67351,3.67352,0,2.02587-1.64764,3.67427-3.67351,3.67427Z" fill="#6c63ff"></path>
+            <path d="M319.7578,356.66658h-122.59803c-2.02587,0-3.67427-1.64842-3.67427-3.67428s1.64841-3.67351,3.67427-3.67351h122.59803c2.02587,0,3.67351,1.64765,3.67351,3.67352,0,2.02587-1.64764,3.67427-3.67351,3.67427Z" fill="#6c63ff"></path>
+            <circle cx="159.97525" cy="246.53845" r="9" fill="#6c63ff"></circle>
+            <path d="M158.97516,261.53845v-2c7.44385,0,13.5-6.05615,13.5-13.5s-6.05615-13.5-13.5-13.5v-2c8.54688,0,15.5,6.95312,15.5,15.5s-6.95312,15.5-15.5,15.5Z" fill="#3f3d56"></path>
+            <circle cx="159.97525" cy="299.53845" r="9" fill="#6c63ff"></circle>
+            <path d="M158.97516,314.53845v-2c7.44385,0,13.5-6.05566,13.5-13.5,0-7.44385-6.05615-13.5-13.5-13.5v-2c8.54688,0,15.5,6.95312,15.5,15.5s-6.95312,15.5-15.5,15.5Z" fill="#3f3d56"></path>
+            <circle cx="159.97525" cy="352.53845" r="9" fill="#6c63ff"></circle>
+            <path d="M158.97516,367.53845v-2c7.44385,0,13.5-6.05566,13.5-13.5s-6.05615-13.5-13.5-13.5v-2c8.54688,0,15.5,6.95312,15.5,15.5s-6.95312,15.5-15.5,15.5Z" fill="#3f3d56"></path>
+            </g>
+            </g>
+            <path d="M384.01219,203.75047c5.55216-1.40863,11.84681,4.52132,14.06128,13.24853,.93243,3.47409,1.01931,7.12088,.2534,10.63535l2.38571,9.92043,.17551-.00924,18.81824,44.34887c4.37547,10.31165,3.91314,22.14968-1.66767,31.86201-3.3199,5.77765-7.67792,9.66177-12.79497,5.69682-8.49085-6.57912-14.03686-44.24916-16.56905-65.88826l-5.85496-21.9959c-2.35018-2.72464-4.01347-5.97257-4.85067-9.47191-2.2149-8.72385,.49107-16.93801,6.04318-18.34671Z" fill="#a0616a"></path>
+            <polygon points="405.38874 228.05282 384.33502 243.01874 394.86188 309.31266 408.0646 326.38767 423.44391 321.0686 427.94066 289.72998 422.64886 259.42289 405.38874 228.05282" fill="#6c63ff"></polygon>
+            </svg>
+        <!-- SVG or Image goes here -->
       </div>
     </div>
-  </div>
-</footer>
-    
-</body>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-    <script>
-        new WOW().init();
-    </script>
-    <script>
-        // Check if history.scrollRestoration is supported
-        if ('scrollRestoration' in history) {
-            // Disable automatic scroll restoration
-            history.scrollRestoration = 'manual';
-        }
+  </section>
 
-        // Listen for the scroll event
-        window.addEventListener('scroll', function () {
-            // Store the current scroll position in sessionStorage
-            sessionStorage.setItem('scrollPosition', window.scrollY);
-        });
-        var ab, os, kp, cu;
-        window.onload = function() {
-            // Scroll to the top of the page with a delay
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        
-            // Use requestAnimationFrame to wait for the next frame
-            window.requestAnimationFrame(function() {
-                // Initial positions after the scrolling animation completes
-                ab = document.getElementById("titles").getBoundingClientRect().top;
-                os = document.getElementById("Our_Services").getBoundingClientRect().top;
-                kp = document.getElementById("scroll_kp").getBoundingClientRect().top;
-                cu = document.getElementById("scroll_contact").getBoundingClientRect().top;
-        
-                console.log("Initial Positions: ", ab, os, kp, cu);
-            });
-        };
-        document.addEventListener('DOMContentLoaded', function () {
-          var About = document.getElementById('about_');
-          var Peoples = document.getElementById('peoples_');
-          var Contact = document.getElementById('Contact_');
-          var service = document.getElementById('service_');
-          var Home = document.getElementById('home_');
-          // 1040
+  <!-- Parallax Background -->
+  <section id="overview"
+    class="flex flex-col w-full h-[500px] bg-cover bg-fixed bg-center flex justify-center items-center"
+    style="
+      background-image: url(https://images.unsplash.com/photo-1642427749670-f20e2e76ed8c?auto=format&fit=crop&w=880&q=80);
+    ">
+    <h1 class="text-white text-5xl font-semibold mt-20 mb-10">
+      Real-time Monitoring & Insights
+    </h1>
+  </section>
 
-          // Update color on scroll
-          window.addEventListener('scroll', function () {
-              var scrollPosition = window.scrollY;
-              var size =  window.innerWidth
-              console.log(ab,os,kp,cu,"sample",scrollPosition, size)
-            if(size>1040){
+  <!-- Content Section -->
+  <section id="features" class="p-20 space-y-8">
+    <h1 class="text-4xl text-center my-20">Xtracut Log Management System Overview</h1>
 
-                // You can adjust these values based on when you want the color to change
-                if (scrollPosition > 0 && scrollPosition < (ab-500)) {
-                    console.log("home")
-                    Home.style.color = "#FC4C01"
-                    About.style.color = "black"
-                    Contact.style.color = "black"
-                    Peoples.style.color = "black"
-                    service.style.color = "black"
-                }
-                else if (scrollPosition > (ab-500) && scrollPosition < (os-200)) {
-                    console.log("about")
-                    About.style.color = "#FC4C01"
-                    Home.style.color = "black"
-                    Contact.style.color = "black"
-                    Peoples.style.color = "black"
-                    service.style.color = "black"
-                }
-                else if (scrollPosition > (os-200) && scrollPosition < (kp-600)) {
-                    console.log("service")
-                    service.style.color = "#FC4C01"
-                    Home.style.color = "black"
-                    Contact.style.color = "black"
-                    Peoples.style.color = "black"
-                    About.style.color = "black"
-                }
-                else if (scrollPosition > (kp-600) && scrollPosition < (cu-600)) {
-                    console.log("peoples")
-                    Peoples.style.color = "#FC4C01"
-                    Home.style.color = "black"
-                    Contact.style.color = "black"
-                    service.style.color = "black"
-                    About.style.color = "black"
-                }else if(scrollPosition > (cu-500)){
-                    console.log("peoples")
-                    Contact.style.color = "#FC4C01"
-                    Home.style.color = "black"
-                    Peoples.style.color = "black" 
-                    service.style.color = "black"
-                    About.style.color = "black"
-                }
-                
-            }else{
-                Contact.style.color = "black"
-                Home.style.color = "black"
-                Peoples.style.color = "black"
-                service.style.color = "black"
-                About.style.color = "black"
-            }
-            {% comment %} console.log(scrollPosition) {% endcomment %}
-          });
-        });
+    <p>
+      The <strong>Xtracut Log Management System</strong> is a comprehensive dashboard built using the Django framework to monitor various plugins utilized by users. It provides real-time insights into plugin usage, allowing users to filter data by time periods such as 1 day, 1 week, 1 month, or custom date ranges. This system is designed to help administrators easily track the status of plugins, view detailed logs, and assess the performance or errors occurring across different users.
+    </p>
 
-        function scrollToSection(sectionId) {
-            var obj, rect, target;
-        
-            // Set a default value for target
-            target = null; // Use null to indicate that no specific target has been set
+    <h2 class="text-3xl text-center my-10">Features</h2>
+    <ul class="list-disc list-inside">
+      <li>Plugin Monitoring: Track and monitor the usage of plugins by different users.</li>
+      <li>Filters: Filter data by specific time frames (1 day, 1 week, 1 month) or define a custom date range.</li>
+      <li>User-specific Insights: View plugin usage details and errors specific to individual users.</li>
+      <li>Dashboard Overview: Visual representation of plugin activity, including success and failure rates.</li>
+      <li>Status Indicators: Displays the current status of each plugin (active/inactive/errors).</li>
+      <li>Real-Time Updates: Automatically updates the status of plugins in real-time.</li>
+      <li>Django-based Backend: Built using the Django web framework with MongoDB for data storage.</li>
+    </ul>
+  </section>
 
-            if (sectionId === "about") {
-                obj = document.getElementById("titles");
-            } else if (sectionId === "service") {
-                obj = document.getElementById("Our_Services");
-            } else if (sectionId === "peoples") {
-                obj = document.getElementById("scroll_kp");
-            } else if (sectionId === "contact") {
-                obj = document.getElementById("scroll_contact");
-            }else if (sectionId === "home") {
-                window.scrollTo({
-                    top: target,
-                    behavior: 'smooth'
-                });
-            }
-        
-            if (obj) {
-                // Get the bounding rect of the target element
-                rect = obj.getBoundingClientRect();
-                target = rect.top - 100 + window.scrollY; // Subtract 50 from the top position
-        
-                // Scroll to the target position
-                window.scrollTo({
-                    top: target,
-                    behavior: 'smooth'
-                });
-            }
-        }
-        
-        
-           
-      </script>
-</html>
+  <!-- Footer -->
+  <footer class="bg-gray-800 pt-10 sm:mt-10 pt-10 w-full">
+    <div class="max-w-6xl m-auto text-gray-800 flex flex-wrap justify-left">
+      <!-- Footer content -->
+    </div>
+    <div class="pt-2">
+      <div class="flex pb-5 px-3 m-auto pt-5 border-t border-gray-500 text-gray-400 text-sm flex-col md:flex-row max-w-6xl">
+        <div class="mt-2">© 2024 Xtracut Log Management System. All Rights Reserved.</div>
+      </div>
+    </div>
+  </footer>
+</main>
+
+<!-- JavaScript for scrolling effect -->
+<script>
+  document.addEventListener('scroll', function () {
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('#navbar a');
+
+    let currentSection = '';
+
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop - 100;
+      if (pageYOffset >= sectionTop) {
+        currentSection = section.getAttribute('id');
+      }
+    });
+
+    navLinks.forEach((navLink) => {
+      navLink.classList.remove('active-link');
+      if (navLink.getAttribute('href').substring(1) === currentSection) {
+        navLink.classList.add('active-link');
+      }
+    });
+  });
+</script>
