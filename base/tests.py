@@ -2,7 +2,7 @@
 # url = 'https://your-api-url.com/api/create-log/'
 payload = {
     'log_msg': 'An error occurred during the scheduling process.',
-    'StatusCode': '500',
+    'StatusCode': '201',
     'user_mailid': 'user@example.com',
     'Plugin': 'acuity_scheduling',
     'function': 'OnScheduling'
@@ -21,7 +21,7 @@ payload = {
 
 import requests
 
-url = 'http://127.0.0.1:8000/api/create/'
+url = 'https://xtracut-log-management-system.vercel.app/api/create/'
 # payload = {
 #     'log_msg': 'An error occurred during the scheduling process.',
 #     'StatusCode': '500',

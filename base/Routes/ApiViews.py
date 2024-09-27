@@ -27,20 +27,23 @@ def robots_txt(request):
 def api_create_log(request):
     if request.method == 'POST':
         try:
-            # Debugging: Print the raw request body
-            print(request.body.decode('utf-8'))  # Log the received raw request body
+            # Debugging: Print the raw request body to confirm the format
+            print(request.body.decode('utf-8'))
 
-            # Check if data is JSON
-            data = json.loads(request.body.decode('utf-8'))
-        except json.JSONDecodeError:
-            return JsonResponse({"error": "Invalid JSON"}, status=400)
+            # If the data is URL-encoded, parse it using urllib's parse_qs
+            data = parse_qs(request.body.decode('utf-8'))
 
-        # Process the data
-        log_msg = data.get('log_msg')
-        status_code = data.get('StatusCode')
-        user_mailid = data.get('user_mailid')
-        plugin = data.get('Plugin')
-        function = data.get('function')
+            # Extracting data from the parsed dictionary (values will be lists)
+            log_msg = data.get('log_msg', [None])[0]
+            status_code = data.get('StatusCode', [None])[0]
+            user_mailid = data.get('user_mailid', [None])[0]
+            plugin = data.get('Plugin', [None])[0]
+            function = data.get('function', [None])[0]
+            
+        except Exception as e:
+            # Handle any unexpected parsing errors
+            print(f"Error occurred: {str(e)}")
+            return JsonResponse({"error": "Invalid data format"}, status=400)
 
         # Validate missing fields
         if not all([log_msg, status_code, user_mailid, plugin, function]):
@@ -59,6 +62,7 @@ def api_create_log(request):
         return JsonResponse({"message": "Log entry created", "log_id": log_entry.userid}, status=201)
 
     return HttpResponse(status=405)  # Method not allowed
+
 
 # Read a log entry
 def api_read_log(request, log_id):
