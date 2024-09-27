@@ -1,7 +1,7 @@
 import requests
 
 url = 'http://localhost:8000/api/create/'
-data = {
+payload = {
     'log_msg': 'Test log message',
     'StatusCode': '200',
     'user_mailid': 'test@example.com',
@@ -9,6 +9,6 @@ data = {
     'function': 'Test Function'
 }
 
-response = requests.post(url, data=data)
+response = requests.post(url, data=[payload])
 
 print(response.json())
