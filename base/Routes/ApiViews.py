@@ -29,19 +29,20 @@ def api_create_log(request):
         try:
             # Debugging: Print the raw request body
             print(request.body.decode('utf-8'))  # Log the received raw request body
-            
+
             # Check if data is JSON
             data = json.loads(request.body.decode('utf-8'))
         except json.JSONDecodeError:
             return JsonResponse({"error": "Invalid JSON"}, status=400)
 
+        # Process the data
         log_msg = data.get('log_msg')
         status_code = data.get('StatusCode')
         user_mailid = data.get('user_mailid')
         plugin = data.get('Plugin')
         function = data.get('function')
 
-        # If any required field is missing, return an error
+        # Validate missing fields
         if not all([log_msg, status_code, user_mailid, plugin, function]):
             return JsonResponse({"error": "Missing data fields"}, status=400)
 
