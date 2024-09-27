@@ -1,6 +1,6 @@
 import requests
 
-url = 'http://localhost:8000/api/create/'
+url = 'https://xtracut-log-management-system.vercel.app/api/create/'
 payload = {
     'log_msg': 'Test log message',
     'StatusCode': '200',
@@ -9,6 +9,12 @@ payload = {
     'function': 'Test Function'
 }
 
-response = requests.post(url, data=[payload])
+# Pass the payload directly as the data
+response = requests.post(url, data=payload)
 
-print(response.json())
+# Check if the request was successful
+if response.status_code == 201:
+    print("Log entry created:", response.json())
+else:
+    print(f"Failed to create log entry: {response.status_code}")
+    print(response.text)

@@ -7,7 +7,7 @@ from django.http import HttpResponse, JsonResponse
 from ..models import LogModel
 from django.views.decorators.csrf import csrf_exempt
 from django.utils import timezone
-
+import json
 
 
 # Create your views here.
@@ -27,12 +27,23 @@ def robots_txt(request):
 @csrf_exempt
 def api_create_log(request):
     if request.method == 'POST':
-        log_msg = request.POST.get('log_msg')
-        status_code = request.POST.get('StatusCode')
-        user_mailid = request.POST.get('user_mailid')
-        plugin = request.POST.get('Plugin')
-        function = request.POST.get('function')
-        
+        try:
+            # Check if data is JSON
+            data = json.loads(request.body.decode('utf-8'))
+        except json.JSONDecodeError:
+            return JsonResponse({"error": "Invalid JSON"}, status=400)
+
+        log_msg = data.get('log_msg')
+        status_code = data.get('StatusCode')
+        user_mailid = data.get('user_mailid')
+        plugin = data.get('Plugin')
+        function = data.get('function')
+
+        # If any required field is missing, return an error
+        if not all([log_msg, status_code, user_mailid, plugin, function]):
+            return JsonResponse({"error": "Missing data fields"}, status=400)
+
+        # Create the log entry
         log_entry = LogModel.objects.create(
             log_msg=log_msg,
             StatusCode=status_code,
@@ -41,7 +52,9 @@ def api_create_log(request):
             function=function,
             dateTime=timezone.now()
         )
+
         return JsonResponse({"message": "Log entry created", "log_id": log_entry.userid}, status=201)
+
     return HttpResponse(status=405)  # Method not allowed
 
 # Read a log entry
