@@ -8,7 +8,7 @@ from ..models import LogModel
 from django.views.decorators.csrf import csrf_exempt
 from django.utils import timezone
 import json
-
+from urllib.parse import parse_qs
 
 # Create your views here.
 
