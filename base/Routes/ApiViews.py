@@ -23,11 +23,13 @@ def robots_txt(request):
 
 
 # API
-
 @csrf_exempt
 def api_create_log(request):
     if request.method == 'POST':
         try:
+            # Debugging: Print the raw request body
+            print(request.body.decode('utf-8'))  # Log the received raw request body
+            
             # Check if data is JSON
             data = json.loads(request.body.decode('utf-8'))
         except json.JSONDecodeError:

@@ -1,0 +1,21 @@
+// global variables
+crmContactOwnerEmail = zoho.loginuserid;
+plugin = "acuity_scheduling"
+
+
+
+// create req params [Before function] :)
+requestParams = map() 
+requestParams.put("log_msg","sample msg");
+requestParams.put("user_mailid", crmContactOwnerEmail)
+requestParams.put("Plugin", plugin) // replace actual Plugin
+requestParams.put("StatusCode", 500); // 500 for error /  200 for success
+requestParams.put("function", "OnScheduling") // replace actual function
+
+response = invokeurl
+	[
+		url :"https://faas-blr1-8177d592.doserverless.co/api/v1/web/fn-0e938d59-984f-4e43-b133-7cc920485b22/default/add_minutes_to_time"
+		type :POST
+		parameters:requestParams
+		content-type:"application/x-www-form-urlencoded"
+	];
